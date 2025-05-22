@@ -33,7 +33,7 @@ public class EnemyMove : MonoBehaviour
     }
     public void SetRandomTargetPos(List<Transform> wayPoints)
     {
-        float randomNumber = Random.Range(-1, 1);
+        float randomNumber = Random.Range(-0.5f, 0.5f);
         currentTargetPos = wayPoints[currentWaypointIndex].position + new Vector3(randomNumber, randomNumber, 0);
     }
 }
