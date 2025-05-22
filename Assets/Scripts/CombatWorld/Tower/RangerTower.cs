@@ -1,10 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RangerTower : MonoBehaviour, ITower
 {
     public LayerMask enemyLayerMask;
     public GameObject bulletPrefabs;
     public float radius = 3;
+    public GameObject circle;
+
     private GameObject target;
 
     private float delayTime = 1f;
@@ -15,6 +17,7 @@ public class RangerTower : MonoBehaviour, ITower
     private void Update()
     {
         DetectTarget();
+        SetScale();
     }
     public void DetectTarget()
     {
@@ -49,5 +52,19 @@ public class RangerTower : MonoBehaviour, ITower
                 newBullet.GetComponent<IBullet>().SetTarget(target);
             }
         }
+    }
+
+    public void SetScale()
+    {
+        if (circle == null) return;
+        float scale = radius / 0.75f;
+        circle.transform.localScale = Vector3.one * scale;
+    }
+
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
