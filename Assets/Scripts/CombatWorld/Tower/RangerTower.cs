@@ -2,17 +2,18 @@
 
 public class RangerTower : MonoBehaviour, ITower
 {
+    public int cost = 50;
     public LayerMask enemyLayerMask;
     public GameObject bulletPrefabs;
     public float radius = 3;
     public GameObject circle;
 
     private GameObject target;
-
     private float delayTime = 1f;
     private float currentTime = 2;
-
     private bool isFirstTimeShoot = true;
+
+    public int Cost => cost;
 
     private void Update()
     {
