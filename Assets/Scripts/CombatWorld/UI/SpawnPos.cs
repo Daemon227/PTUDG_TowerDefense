@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,9 +8,24 @@ public class SpawnPos : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
-        towerBuildPanel.transform.position = screenPos;
-        towerBuildPanel.SetActive(true);
+        if (BuyTowerUIManager.Instance == null)
+        {
+            Debug.LogError("BuyTowerUIManager.Instance is null!");
+            return;
+        }
+        if (!BuyTowerUIManager.Instance.ListSpawnPos.ContainsKey(transform.position))
+        {
+            BuyTowerUIManager.Instance.ListSpawnPos.Add(transform.position, false);
+        }
+        if (!BuyTowerUIManager.Instance.ListSpawnPos.GetValueOrDefault(transform.position))
+        {
+            Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
+            towerBuildPanel.transform.position = screenPos;
+            towerBuildPanel.SetActive(true);
+            BuyTowerUIManager.Instance.currentPosToSpawnTower = transform.position;
+            BuyTowerUIManager.Instance.currentSpawnPos = this;
+        }
+        
     }
     public void OnMouseEnter()
     {
@@ -19,5 +35,10 @@ public class SpawnPos : MonoBehaviour
     public void OnMouseExit()
     {
         gameObject.transform.localScale = Vector3.one;
+    }
+    public void HideAfterSpawn()
+    {
+        towerBuildPanel.SetActive(false);
+        gameObject.SetActive(false); 
     }
 }
