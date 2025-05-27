@@ -24,10 +24,9 @@ public class EnemyMove : MonoBehaviour
             currentWaypointIndex++;
             if (currentWaypointIndex >= wayPoints.Count)
             {
-                currentWaypointIndex = 0;
-                transform.position = wayPoints[currentWaypointIndex].position;
+                Destroy(this.gameObject);
+                return;
             }
-
             SetRandomTargetPos(wayPoints);
         }
     }

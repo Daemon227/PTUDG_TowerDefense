@@ -5,10 +5,7 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
-    [Header("ways Settup")]
-    public List<Transform> wayPoint1;
-    public List<Transform> wayPoint2;
-    public List<Transform> wayPoint3;
+    
 
     [Header("Infor Battle")]
     [SerializeField] private int waveNumber = 5;

@@ -31,4 +31,8 @@ public class EnemyAI : MonoBehaviour, IEnemy
         }
     }
     
+    public void SetWayPoint(List<Transform> transforms)
+    {
+        this.wayPoints = transforms;
+    }
 }
