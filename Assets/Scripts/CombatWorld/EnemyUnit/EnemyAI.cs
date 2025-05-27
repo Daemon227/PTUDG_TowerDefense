@@ -6,6 +6,8 @@ public class EnemyAI : MonoBehaviour, IEnemy
 {
     public List<Transform> wayPoints;
     [SerializeField] private float radius = 1f;
+    public int hp = 30;
+    public int coin = 15;
     public LayerMask layerMask;
     private EnemyMove enemyMove;
     private EnemyAttack enemyAttack;
@@ -34,5 +36,15 @@ public class EnemyAI : MonoBehaviour, IEnemy
     public void SetWayPoint(List<Transform> transforms)
     {
         this.wayPoints = transforms;
+    }
+
+    public void TakeDame(int dame)
+    {
+        this.hp -= dame;
+        if (this.hp <= 0)
+        {
+            CombatManager.Instance.TakeCoin(coin);
+            Destroy(gameObject);
+        }
     }
 }

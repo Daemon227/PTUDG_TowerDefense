@@ -24,6 +24,7 @@ public class EnemyMove : MonoBehaviour
             currentWaypointIndex++;
             if (currentWaypointIndex >= wayPoints.Count)
             {
+                CombatManager.Instance.TakeDame();
                 Destroy(this.gameObject);
                 return;
             }
