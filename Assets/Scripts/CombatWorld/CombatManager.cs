@@ -35,4 +35,22 @@ public class CombatManager : MonoBehaviour
         }
         else return false;
     }
+
+    public void TakeCoin(int coin)
+    {
+        this.coin += coin;
+    }
+
+    public void TakeDame()
+    {
+        if(hp > 0)
+        {
+            this.hp -= 1;
+        }
+
+        if (hp == 0)
+        {
+            Debug.Log("GameOver");
+        }
+    }
 }

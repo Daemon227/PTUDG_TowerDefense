@@ -3,6 +3,7 @@ using UnityEngine;
 public class Arrow : MonoBehaviour, IBullet
 {
     public float speed = 5f;
+    public int dame = 10;
     public GameObject target;
     private void Update()
     {
@@ -13,6 +14,7 @@ public class Arrow : MonoBehaviour, IBullet
         if (collision.gameObject == target.gameObject)
         {
             Debug.Log("Booomm");
+            collision.gameObject.GetComponent<IEnemy>().TakeDame(dame);
             Destroy(this.gameObject);
         }
     }
