@@ -2,7 +2,57 @@ fileFormatVersion: 2
 guid: cbaecc82c1deb2647a9503dd82c04a42
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Arrow_1
+    second: {fileID: 7400000, guid: 82a919ed59878844a9510a9f202ec84e, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Arrow_2
+    second: {fileID: 7400000, guid: 7eb143215aa869040bd486e3e842f1fe, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Idle
+    second: {fileID: 7400000, guid: b8ed4171340a1e946bf5a6de4e6e5210, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Original
+    second: {fileID: 7400000, guid: 661d0cdc2d266624993f2fdb7cd194e9, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: 'Run '
+    second: {fileID: 7400000, guid: febdd26a83e077a4c921e6e60c35d74e, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Shoot Diagona Down
+    second: {fileID: 7400000, guid: f39f95dfe08492548a00288fc803cf6b, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Shoot Diagonal Up
+    second: {fileID: 7400000, guid: 0bf507cdbcc0b09408d2aaebb9ca7ecc, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Shoot Down
+    second: {fileID: 7400000, guid: 501079e87ec143142bf9bfe9325f0be7, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Shoot Front
+    second: {fileID: 7400000, guid: 237cc6932f9517e40a787f5139394297, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Shoot Up
+    second: {fileID: 7400000, guid: f864193b57a625147a6adff098d8abf5, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -98,7 +148,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638829524183504721
+  platformSettingsDirtyTick: 638845894796335821
   textureAssetName: 
   singleSpriteImportData:
   - name: 
