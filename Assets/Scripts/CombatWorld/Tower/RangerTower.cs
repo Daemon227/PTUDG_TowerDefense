@@ -4,9 +4,9 @@ public class RangerTower : MonoBehaviour, ITower
 {
     public int cost = 50;
     public LayerMask enemyLayerMask;
-    public GameObject bulletPrefabs;
     public float radius = 3;
     public GameObject circle;
+    public GameObject acher;
 
     // kiem soat delay khi ban dan
     private GameObject target;
@@ -39,22 +39,20 @@ public class RangerTower : MonoBehaviour, ITower
         Collider2D collider = Physics2D.OverlapCircle(transform.position, radius, enemyLayerMask);
         if (collider != null)
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             target = collider.gameObject;
             Attack(target);  
         }
         else
         {
             isFirstTimeShoot = true;
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         }
     }
     public void Attack(GameObject target)
     {
         if (isFirstTimeShoot)
         {
-            GameObject newBullet = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
-            newBullet.GetComponent<IBullet>().SetTarget(target);
+            acher.GetComponent<ArcherAI>().Prepare(target);
+            acher.GetComponent<Animator>().Play("Shoot Diagona Down");
             isFirstTimeShoot = false;
         }
         else
@@ -63,8 +61,8 @@ public class RangerTower : MonoBehaviour, ITower
             if (currentTime > delayTime)
             {
                 currentTime = 0;
-                GameObject newBullet = Instantiate(bulletPrefabs, transform.position, Quaternion.identity);
-                newBullet.GetComponent<IBullet>().SetTarget(target);
+                acher.GetComponent<ArcherAI>().Prepare(target);
+                acher.GetComponent<Animator>().Play("Shoot Diagona Down");
             }
         }
     }
@@ -104,4 +102,5 @@ public class RangerTower : MonoBehaviour, ITower
             delayTimeHideAttackZone = 0;
         }
     }
+
 }
