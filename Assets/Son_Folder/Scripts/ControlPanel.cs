@@ -11,6 +11,7 @@ public class ControlPanel : MonoBehaviour
     public GameObject HeroPanel;
     public GameObject SupportItemPanel;
     public GameObject SettingPanel;
+    public GameObject LevelSelecting;
 
     private GameObject[] allPanels;
 
@@ -20,7 +21,7 @@ public class ControlPanel : MonoBehaviour
         allPanels = new GameObject[] {
             MenuPanel, ShopPanel, CollectorPanel,
             HeroCollectorPanel, EnemyCollectorPanel, TowerCollectorPanel,
-            HeroPanel, SupportItemPanel, SettingPanel
+            HeroPanel, SupportItemPanel, SettingPanel, LevelSelecting
         };
     }
 
@@ -75,9 +76,13 @@ public class ControlPanel : MonoBehaviour
         ShowOnly(allPanels,SettingPanel);
     }
 
+    public void OpenLevelSelecting()
+    {
+        ShowOnly(allPanels, LevelSelecting);
+    }
     public void BackToMenu()
     {
-        ShowOnly(allPanels,MenuPanel);
+        ShowOnly(allPanels, MenuPanel);
     }
 
     void Start()
