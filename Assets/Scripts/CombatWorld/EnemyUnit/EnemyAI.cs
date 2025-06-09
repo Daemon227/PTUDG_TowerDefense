@@ -6,19 +6,26 @@ public class EnemyAI : MonoBehaviour, IEnemy
 {
     public List<Transform> wayPoints;
     [SerializeField] private float radius = 1f;
-    public int hp = 30;
+    public int maxHP = 30;
+    public int currentHp;
     public int coin = 15;
     public LayerMask layerMask;
     private EnemyMove enemyMove;
     private EnemyAttack enemyAttack;
-
+    private EHpBar hpbar;
 
     private void Awake()
     {
+        currentHp = maxHP;
+
         enemyMove = GetComponent<EnemyMove>();
         if (enemyMove == null) enemyMove = gameObject.AddComponent<EnemyMove>();     
         enemyAttack = GetComponent<EnemyAttack>();
         if (enemyAttack == null) enemyAttack = gameObject.AddComponent<EnemyAttack>();
+
+        hpbar = GetComponentInChildren<EHpBar>();
+        if (hpbar == null) return;
+        hpbar.SetHpInfor(maxHP);
     }
     private void Update()
     {
@@ -40,8 +47,9 @@ public class EnemyAI : MonoBehaviour, IEnemy
 
     public void TakeDame(int dame)
     {
-        this.hp -= dame;
-        if (this.hp <= 0)
+        this.currentHp -= dame;
+        hpbar.FillHpBar(currentHp);
+        if (this.currentHp <= 0)
         {
             CombatManager.Instance.TakeCoin(coin);
             Destroy(gameObject);

@@ -24,7 +24,7 @@ public class Arrow : MonoBehaviour, IBullet
         if (target != null)
         {
             Vector2 direc = (target.transform.position - transform.position).normalized;
-            float angle = Mathf.Atan2(direc.x, direc.y) * Mathf.Rad2Deg;
+            float angle = Mathf.Atan2(direc.y, direc.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, angle);
             transform.position = Vector2.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
         }
