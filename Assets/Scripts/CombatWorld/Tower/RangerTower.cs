@@ -70,7 +70,7 @@ public class RangerTower : MonoBehaviour, ITower
     public void SetScale()
     {
         if (circle == null) return;
-        float scale = radius / 0.75f;
+        float scale = radius / 0.5f;
         circle.transform.localScale = Vector3.one * scale;    
     }
 
