@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 3247706296065411903}
   - component: {fileID: 8013837397846645473}
   - component: {fileID: 9118922034377135817}
+  - component: {fileID: 7119042833244968592}
   m_Layer: 0
   m_Name: AcherTowerLV1
   m_TagString: Untagged
@@ -272,8 +273,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   radius: 3
-  circle: {fileID: 4445470799031876756}
   acher: {fileID: 7439041979553616516}
+--- !u!114 &7119042833244968592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5929184411062166132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c263d2d72bb244342a210cf2a54c3620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circle: {fileID: 4445470799031876756}
 --- !u!1 &7439041979553616516
 GameObject:
   m_ObjectHideFlags: 0

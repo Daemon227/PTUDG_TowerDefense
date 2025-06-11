@@ -3,15 +3,16 @@ using UnityEngine.EventSystems;
 
 public class CloseUIPanel : MonoBehaviour
 {
-    public GameObject panelToClose;
-
+    public GameObject buyPanel;
+    public GameObject upgradePanel;
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
         {
             if (!EventSystem.current.IsPointerOverGameObject())
             {
-                panelToClose.SetActive(false);
+                buyPanel.SetActive(false);
+                upgradePanel.SetActive(false);
             }
         }
     }
