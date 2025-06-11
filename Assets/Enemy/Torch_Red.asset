@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9686f1c33537d944ba2b453eaa45f4c, type: 3}
+  m_Name: Torch_Red
+  m_EditorClassIdentifier: 
+  enemyName: Torch Red
+  enemySprite: {fileID: -4230181108591323607, guid: dfd54277de537ea41a9930289d99574e, type: 3}
+  health: 120
+  speed: 0
+  damage: 4
+  difficulty: 2
