@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bef7e07b986e4924bb71261a4e3f6ac2
+guid: 48f4ae1679c975a4bba525f8a3cfb8c8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4272370502821458166
-    second: PremadeButtons_Replay_0
+      213: 6064816402958084930
+    second: grass_template2_0_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PremadeButtons_Replay_0
+      name: grass_template2_0_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 983
-        height: 304
+        width: 1280
+        height: 720
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0f4876e9ad75b4c0800000000000000
-      internalID: -4272370502821458166
+      spriteID: 24b674eb26e8a2450800000000000000
+      internalID: 6064816402958084930
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      grass_template2_0_0: 6064816402958084930
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

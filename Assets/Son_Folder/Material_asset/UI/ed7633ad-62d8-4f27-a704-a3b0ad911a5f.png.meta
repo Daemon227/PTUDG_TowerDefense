@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f4ef8a123e63ab241a2f19082bde46e7
+guid: 59c33968f06b15442a6f887a8a962d18
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1569453239015838017
-    second: PremadeButtons_Shop_0
+      213: 8968894980678583787
+    second: ed7633ad-62d8-4f27-a704-a3b0ad911a5f_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PremadeButtons_Shop_0
+      name: ed7633ad-62d8-4f27-a704-a3b0ad911a5f_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 3
         y: 0
-        width: 535
-        height: 250
+        width: 1019
+        height: 1019
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1411023d761d7c510800000000000000
-      internalID: 1569453239015838017
+      spriteID: be58127377ae77c70800000000000000
+      internalID: 8968894980678583787
       vertices: []
       indices: 
       edges: []
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ed7633ad-62d8-4f27-a704-a3b0ad911a5f_0: 8968894980678583787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
