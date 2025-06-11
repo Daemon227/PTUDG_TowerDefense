@@ -274,6 +274,7 @@ MonoBehaviour:
     m_Bits: 128
   radius: 3
   acher: {fileID: 7439041979553616516}
+  newTower: {fileID: 5483488570903462656, guid: 2683cb8d8c83a714caac52788d95da25, type: 3}
 --- !u!114 &7119042833244968592
 MonoBehaviour:
   m_ObjectHideFlags: 0

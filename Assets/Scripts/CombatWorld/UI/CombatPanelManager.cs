@@ -1,10 +1,22 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CloseUIPanel : MonoBehaviour
+public class CombatPanelManager : MonoBehaviour
 {
     public GameObject buyPanel;
     public GameObject upgradePanel;
+
+    public static CombatPanelManager Instance;
+
+    private void Start()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(1))
@@ -16,4 +28,11 @@ public class CloseUIPanel : MonoBehaviour
             }
         }
     }
+
+    public void CloseAllUI()
+    {
+        buyPanel.SetActive(false);
+        upgradePanel.SetActive(false);
+    }
+
 }

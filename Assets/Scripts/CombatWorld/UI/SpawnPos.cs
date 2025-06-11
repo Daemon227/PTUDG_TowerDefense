@@ -15,17 +15,16 @@ public class SpawnPos : MonoBehaviour
         }
         if (!BuyTowerUIManager.Instance.ListSpawnPos.ContainsKey(transform.position))
         {
-            BuyTowerUIManager.Instance.ListSpawnPos.Add(transform.position, false);
+            BuyTowerUIManager.Instance.ListSpawnPos.Add(transform.position, null);
+            BuyTowerUIManager.Instance.ListSpawnPosObjects.Add(transform.position, this);
         }
         if (!BuyTowerUIManager.Instance.ListSpawnPos.GetValueOrDefault(transform.position))
         {
             Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
             towerBuildPanel.transform.position = screenPos;
             towerBuildPanel.SetActive(true);
-            BuyTowerUIManager.Instance.currentPosToSpawnTower = transform.position;
-            BuyTowerUIManager.Instance.currentSpawnPos = this;
-        }
-        
+            BuyTowerUIManager.Instance.currentPosToSpawnTower = transform.position; 
+        }   
     }
     public void OnMouseEnter()
     {
@@ -36,9 +35,13 @@ public class SpawnPos : MonoBehaviour
     {
         gameObject.transform.localScale = Vector3.one;
     }
-    public void HideAfterSpawn()
+    public void HideSpawnPosAfterSpawn()
     {
         towerBuildPanel.SetActive(false);
         gameObject.SetActive(false); 
+    }
+    public void ShowSpawnPosAgain()
+    {
+        gameObject.SetActive(true);
     }
 }
