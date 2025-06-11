@@ -4,19 +4,22 @@ public class TowerUI : MonoBehaviour
 {
     public GameObject circle;
     private float radius;
-
-    public GameObject upgradeTowerPanel;
+    private GameObject upgradeTowerPanel;
+    private GameObject newTower;
 
     // delayTime truoc khi tat attackZone
     private float delayTimeBeforHideAttackZone = 2f;
     private float delayTimeHideAttackZone = 0;
     private bool isAttackZoneActive = true;
 
+
     private void Start()
     {
         radius = GetComponent<ITower>().Radius;
-
+        newTower = GetComponent<ITower>().NewTower;
         SetScale();
+
+        upgradeTowerPanel = CombatPanelManager.Instance.upgradePanel;
     }
     private void Update()
     {
@@ -56,6 +59,9 @@ public class TowerUI : MonoBehaviour
         Vector2 screenPos = Camera.main.WorldToScreenPoint(transform.position);
         upgradeTowerPanel.transform.position = screenPos;
         upgradeTowerPanel.SetActive(true);
+
+        BuyTowerUIManager.Instance.currentPosToSpawnTower = transform.position;
+        BuyTowerUIManager.Instance.newTower = newTower;
     }
 
     public void HideAttackZone()

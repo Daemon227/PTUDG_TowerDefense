@@ -5,8 +5,8 @@ public class RangerTower : MonoBehaviour, ITower
     public int cost = 50;
     public LayerMask enemyLayerMask;
     public float radius = 3;
-    //public GameObject circle;
     public GameObject acher;
+    public GameObject newTower;
 
     // kiem soat delay khi ban dan
     private GameObject target;
@@ -16,6 +16,7 @@ public class RangerTower : MonoBehaviour, ITower
   
     public int Cost => cost;
     public float Radius => radius;
+    public GameObject NewTower => newTower;
 
     private void Update()
     {
