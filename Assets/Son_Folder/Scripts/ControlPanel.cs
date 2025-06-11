@@ -5,10 +5,8 @@ public class ControlPanel : MonoBehaviour
     public GameObject MenuPanel;
     public GameObject ShopPanel;
     public GameObject CollectorPanel;
-    public GameObject HeroCollectorPanel;
     public GameObject EnemyCollectorPanel;
     public GameObject TowerCollectorPanel;
-    public GameObject HeroPanel;
     public GameObject SupportItemPanel;
     public GameObject SettingPanel;
     public GameObject LevelSelecting;
@@ -20,8 +18,8 @@ public class ControlPanel : MonoBehaviour
         // Khởi tạo mảng chứa tất cả các panel
         allPanels = new GameObject[] {
             MenuPanel, ShopPanel, CollectorPanel,
-            HeroCollectorPanel, EnemyCollectorPanel, TowerCollectorPanel,
-            HeroPanel, SupportItemPanel, SettingPanel, LevelSelecting
+            EnemyCollectorPanel, TowerCollectorPanel,
+            SupportItemPanel, SettingPanel, LevelSelecting
         };
     }
 
@@ -31,11 +29,6 @@ public class ControlPanel : MonoBehaviour
             panel.SetActive(false);
 
         currentPanel.SetActive(true);
-    }
-
-    public void OpenHeroPanel()
-    {
-        ShowOnly(allPanels,HeroPanel);
     }
 
     public void OpenShopPanel()
@@ -48,11 +41,6 @@ public class ControlPanel : MonoBehaviour
 
         ShowOnly(allPanels,CollectorPanel);
         Debug.Log("Clicked");
-    }
-
-    public void OpenHeroCollectorPanel()
-    {
-        ShowOnly(allPanels,HeroCollectorPanel);
     }
 
     public void OpenEnemyCollectorPanel()
