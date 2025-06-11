@@ -8,6 +8,7 @@ public class BuyTowerUIManager : MonoBehaviour
     private Dictionary<Vector3, bool> listSpawnPos = new Dictionary<Vector3, bool>();
     public Vector3 currentPosToSpawnTower = Vector3.zero;
     public SpawnPos currentSpawnPos = null;
+
     private void Start()
     {
         if (Instance!= null && Instance != this)

@@ -5,7 +5,7 @@ public class RangerTower : MonoBehaviour, ITower
     public int cost = 50;
     public LayerMask enemyLayerMask;
     public float radius = 3;
-    public GameObject circle;
+    //public GameObject circle;
     public GameObject acher;
 
     // kiem soat delay khi ban dan
@@ -13,26 +13,13 @@ public class RangerTower : MonoBehaviour, ITower
     private float delayTime = 1f;
     private float currentTime = 2;
     private bool isFirstTimeShoot = true;
-
-    // delayTime truoc khi tat attackZone
-    private float delayTimeBeforHideAttackZone = 2f;
-    private float delayTimeHideAttackZone = 0;
-    private bool isAttackZoneActive = true;
+  
     public int Cost => cost;
-
-    private void Start()
-    {
-        SetScale();    
-    }
+    public float Radius => radius;
 
     private void Update()
     {
-        DetectTarget();
-        
-        if (isAttackZoneActive)
-        {
-            HideAttackZone();
-        }       
+        DetectTarget();       
     }
     public void DetectTarget()
     {
@@ -66,41 +53,4 @@ public class RangerTower : MonoBehaviour, ITower
             }
         }
     }
-
-    public void SetScale()
-    {
-        if (circle == null) return;
-        float scale = radius / 0.5f;
-        circle.transform.localScale = Vector3.one * scale;    
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, radius);
-    }
-
-    public void OnMouseEnter()
-    {
-        circle.SetActive(true);
-    }
-    public void OnMouseExit()
-    {
-        if(isAttackZoneActive == false)
-        {
-            circle.SetActive(false);
-        }
-    }
-
-    public void HideAttackZone()
-    {
-        delayTimeHideAttackZone += Time.deltaTime;
-        if(delayTimeHideAttackZone > delayTimeBeforHideAttackZone)
-        {
-            isAttackZoneActive = false;
-            circle.SetActive(false);
-            delayTimeHideAttackZone = 0;
-        }
-    }
-
 }
