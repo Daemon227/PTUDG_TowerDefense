@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class TowerManager : MonoBehaviour
 {
     [Header("Tower Data")]
-    public TowerData[] towerList; // Kéo ScriptableObjects vào đây
+    public TowerData[] towerList;
 
     [Header("UI Panel Left")]
     public Text nameText, priceText, ratespeedText, damageText, descriptionText;
@@ -28,7 +28,6 @@ public class TowerManager : MonoBehaviour
 
         TowerData tower = towerList[index];
 
-        // Hiển thị thông tin bên trái
         selectedTowerImage.sprite = tower.towerSprite;
         nameText.text = tower.towerName;
         priceText.text = "Giá: " + tower.price;
@@ -36,11 +35,11 @@ public class TowerManager : MonoBehaviour
         damageText.text = "Sát thương: " + tower.damage;
         descriptionText.text = tower.description;
 
-        // Panel phải: tìm và thay ảnh
+        //tìm và thay ảnh
         Transform buttonTransform = towerButtons[index].transform;
 
         Transform questionImage = buttonTransform.Find("QuestionImage");
-        Transform towerImage = buttonTransform.Find("MonsterImage"); // hoặc đổi tên thành "TowerImage" nếu muốn rõ ràng hơn
+        Transform towerImage = buttonTransform.Find("TowerImage");
 
         if (questionImage != null)
             questionImage.gameObject.SetActive(false);
@@ -48,7 +47,7 @@ public class TowerManager : MonoBehaviour
         if (towerImage != null)
         {
             Image img = towerImage.GetComponent<Image>();
-            img.sprite = tower.towerSprite; // đúng dữ liệu Tower
+            img.sprite = tower.towerSprite;
             towerImage.gameObject.SetActive(true);
         }
         else

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9686f1c33537d944ba2b453eaa45f4c, type: 3}
-  m_Name: Barel_Red
+  m_Script: {fileID: 11500000, guid: 3836031c3523bfb47980afc64fe18061, type: 3}
+  m_Name: Thap6
   m_EditorClassIdentifier: 
-  enemyName: Barel Red
-  enemySprite: {fileID: -795475609545570021, guid: 4a70118346b8432419364249f97d6b53, type: 3}
-  health: 150
-  speed: 0
-  damage: 2
-  difficulty: 0
+  towerName: Thap cung lv3
+  towerSprite: {fileID: 0}
+  price: 0
+  rateSpeed: 0
+  damage: 0
+  description: 
