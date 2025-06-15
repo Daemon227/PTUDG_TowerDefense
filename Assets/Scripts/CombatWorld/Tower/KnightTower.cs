@@ -16,9 +16,9 @@ public class KnightTower : MonoBehaviour, ITower
     private List<GameObject> knights = new List<GameObject>();
     // kiem soat delay khi hoi sinh knight sau khi chet
     private GameObject target;
-    private float delayTime = 3f;
-    private float currentTime = 2;
-    private bool isFirstTimeShoot = true;
+    private float delayTime = 5f;
+    private float currentTime = 0;
+    private bool isFirstSpawm = true;
 
     public int Cost => cost;
     public float Radius => radius;
@@ -27,25 +27,46 @@ public class KnightTower : MonoBehaviour, ITower
 
     private void Update()
     {
-        if (knights.Count < 3)
-        {
-            Attack(null);
-        }
+        Attack(null);
     }
     public void Attack(GameObject target)
     {
-        currentTime += Time.deltaTime;
-        if (currentTime > delayTime)
+        if (knights.Count < 3)
         {
-            GameObject newKnight = Instantiate(knight, transform.position, Quaternion.identity);          
-            newKnight.GetComponent<KnightAI>().flagPos = flag.transform;
-            knights.Add(newKnight);
+            if (isFirstSpawm)
+            {
+                GameObject newKnight = Instantiate(knight, transform);
+                newKnight.transform.position = transform.position;
+                newKnight.GetComponent<KnightAI>().flagPos = flag.transform;
+                knights.Add(newKnight);
+            }
+            else
+            {
+                currentTime += Time.deltaTime;
+                if (currentTime > delayTime)
+                {
+                    GameObject newKnight = Instantiate(knight, transform);
+                    newKnight.transform.position = transform.position;
+                    newKnight.GetComponent<KnightAI>().flagPos = flag.transform;
+                    knights.Add(newKnight);
+                    currentTime = 0;
+                }
+            }
         }
-        
+        else
+        {
+            isFirstSpawm = false;
+        }
     }
 
     public void DetectTarget()
     {
         throw new System.NotImplementedException();
+    }
+
+    public void RemoveKnight(GameObject knight)
+    {
+        if (!knights.Contains(knight)) return;
+        knights.Remove(knight);
     }
 }

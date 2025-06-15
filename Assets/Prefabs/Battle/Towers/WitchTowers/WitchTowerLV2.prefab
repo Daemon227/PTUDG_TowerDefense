@@ -254,7 +254,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: f9a011de58d573d46912739663b6f5d6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -300,17 +300,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.026169062, y: 0.5756378}
+  m_Offset: {x: -0.008348227, y: 0.4627726}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.3}
-    oldSize: {x: 2, y: 4}
+    oldSize: {x: 1.4883721, y: 2.9767442}
     newSize: {x: 2, y: 4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.4077716, y: 2.5943208}
+  m_Size: {x: 1.0869975, y: 1.9408913}
   m_EdgeRadius: 0
 --- !u!114 &2696106951017466016
 MonoBehaviour:
@@ -331,6 +331,7 @@ MonoBehaviour:
   radius: 4.5
   witch: {fileID: 8157018380947326193}
   newTower: {fileID: 4509500936717596341, guid: dbdc02f94ad5e264f8b88ea1b6564e0e, type: 3}
+  changPosPanel: {fileID: 0}
 --- !u!114 &93860018542649190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,7 +373,7 @@ Transform:
   m_GameObject: {fileID: 8157018380947326193}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.53, z: 0}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
