@@ -404,7 +404,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 962610a7cceccdf45bae5986ab3e3cb3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -493,8 +493,8 @@ MonoBehaviour:
     m_Bits: 128
   radius: 4
   numberKnight: 3
-  knight: {fileID: 7774081474877899800, guid: dc3dd9e404654f44d9d17ad1b896fd4e, type: 3}
-  newTower: {fileID: 5560868029680258488, guid: e065fb2152f6d774bab967052b6f37fc, type: 3}
+  knight: {fileID: 9188987908880834025, guid: 44ec75d94eab5f44ea9170986a74dccc, type: 3}
+  newTower: {fileID: 1955245614553972536, guid: e065fb2152f6d774bab967052b6f37fc, type: 3}
   flag: {fileID: 304072778754066825}
   changPosPanel: {fileID: 1849346982625564951}
 --- !u!114 &2012679106535706106

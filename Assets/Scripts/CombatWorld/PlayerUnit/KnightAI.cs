@@ -63,9 +63,14 @@ public class KnightAI : MonoBehaviour
             return;
         }
         float distanceToTarget = Vector3.Distance(transform.position, target.transform.position);
+        if (distanceToTarget > radius + 1)
+        {
+            target = null;
+            return;
+        }
         if (distanceToTarget > radius * 0.5) // Nếu mục tiêu ở xa
         {
-            GetRandomPos(target.transform, 0.5f, 0.5f);
+            GetRandomPos(target.transform, 1f, 1f);
             MoveToTarget(fixedMoveTarget);
         }
         else // Nếu mục tiêu ở gần
@@ -122,7 +127,7 @@ public class KnightAI : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, pos, 1.5f * Time.deltaTime);
 
             // Xoay theo hướng di chuyển
-            if (pos.x < transform.position.x)
+            if (transform.position.x - pos.x >= 0.5f)
             {
                 transform.rotation = Quaternion.Euler(0, 180, 0);
             }
@@ -174,6 +179,7 @@ public class KnightAI : MonoBehaviour
         }
         if (currentHp <= 0)
         {
+            gameObject.GetComponentInParent<KnightTower>().RemoveKnight(this.gameObject);
             Destroy(gameObject);
         }
     }
