@@ -1,22 +1,22 @@
 using UnityEditor.Rendering;
 using UnityEngine;
 
-public class EnemyAttack : MonoBehaviour
+public class UnitAttack : MonoBehaviour
 {
-    public bool DetectPlayerUnit(float radius, LayerMask layerMask)
+    public GameObject DetectTargetUnit(float radius, LayerMask layerMask)
     {
         Collider2D collider = Physics2D.OverlapCircle(transform.position, radius, layerMask);
         if (collider != null)
         {
-            return true;
+            return collider.gameObject;
         }
         else
         {
-            return false;
+            return null;
         }
     }
 
-    public void AttackPlayer()
+    public void AttackTarget()
     {
         Debug.Log("attack player Unit");
     }
