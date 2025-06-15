@@ -7,6 +7,7 @@ public class WitchTower : MonoBehaviour, ITower
     public float radius = 3;
     public GameObject witch;
     public GameObject newTower;
+    public GameObject changPosPanel;
 
     // kiem soat delay khi ban dan
     private GameObject target;
@@ -17,6 +18,7 @@ public class WitchTower : MonoBehaviour, ITower
     public int Cost => cost;
     public float Radius => radius;
     public GameObject NewTower => newTower;
+    public GameObject ChangePosPanel => changPosPanel;
 
     private void Update()
     {

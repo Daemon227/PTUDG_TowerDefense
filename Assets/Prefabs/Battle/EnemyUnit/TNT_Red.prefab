@@ -152,7 +152,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 0.15}
+  m_SizeDelta: {x: 0.8, y: 0.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &977230202159438217
 CanvasRenderer:
@@ -340,17 +340,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.037132025, y: -0.092571676}
+  m_Offset: {x: 0.028636694, y: -0.067087114}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.44705883, y: 0.5652174}
-    oldSize: {x: 1.328125, y: 1.078125}
+    oldSize: {x: 0.85, y: 0.69}
     newSize: {x: 0.85, y: 0.69}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5323701, y: 0.81283045}
+  m_Size: {x: 0.36813688, y: 0.46737468}
   m_EdgeRadius: 0
 --- !u!50 &3043096503364487580
 Rigidbody2D:
@@ -396,6 +396,8 @@ MonoBehaviour:
   maxHP: 30
   currentHp: 0
   coin: 15
+  dame: 2
+  speed: 1.5
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -434,7 +436,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 0.15}
+  m_SizeDelta: {x: 0.8, y: 0.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1864728040817660131
 CanvasRenderer:

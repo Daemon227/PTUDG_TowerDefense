@@ -7,7 +7,7 @@ public class EnemyMove : MonoBehaviour
     private int currentWaypointIndex = 0;
     private bool isHasNewTargetPos = false;
     private Vector3 currentTargetPos = new Vector3();
-    public void FollowThePath(List<Transform> wayPoints)
+    public void FollowThePath(List<Transform> wayPoints, float speed)
     {
         if (wayPoints.Count == 0) return;
 
@@ -17,7 +17,7 @@ public class EnemyMove : MonoBehaviour
             isHasNewTargetPos = true;
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, currentTargetPos, 2 * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, currentTargetPos, speed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, currentTargetPos) < 0.03f)
         {
