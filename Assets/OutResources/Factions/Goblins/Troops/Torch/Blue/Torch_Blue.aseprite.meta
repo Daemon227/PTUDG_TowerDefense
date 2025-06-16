@@ -2,7 +2,37 @@ fileFormatVersion: 2
 guid: c0b80b1440b1ffb47841a97183581730
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Attack_Down
+    second: {fileID: 7400000, guid: 92afb1d022d9004458ce906a6c9f5691, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Attack_Right
+    second: {fileID: 7400000, guid: 20102b42b4aafd04589b0217f5b9fd11, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Attack_Up
+    second: {fileID: 7400000, guid: fc633ed898b3ec043a7bfa177f3b4893, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Idle
+    second: {fileID: 7400000, guid: a2923e6b72d73654d806fd02dd955cab, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Original
+    second: {fileID: 7400000, guid: f2666cc184098b94280aa8f602f5fdfe, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Run
+    second: {fileID: 7400000, guid: f36afba7c27a00443893cd0dda7a3ef0, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -98,7 +128,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638855982329075374
+  platformSettingsDirtyTick: 638856595613301082
   textureAssetName: 
   singleSpriteImportData:
   - name: 
