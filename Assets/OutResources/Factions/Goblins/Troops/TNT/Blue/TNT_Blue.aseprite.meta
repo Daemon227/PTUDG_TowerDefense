@@ -2,7 +2,32 @@ fileFormatVersion: 2
 guid: 3e5226ef04a522743b11ae4058e4e5b5
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Dynamite
+    second: {fileID: 7400000, guid: c933a89347047aa4f9ee54d37d620a80, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Idle
+    second: {fileID: 7400000, guid: 73b93a21a5a22ca4f9007d06c1822ce9, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Original
+    second: {fileID: 7400000, guid: 1d144d4ddc6dcdb489a8f9d960ae5c5c, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Run
+    second: {fileID: 7400000, guid: 80e85d53f596fb24f8cdf84dd9918c5d, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Throw
+    second: {fileID: 7400000, guid: 1ba4a5d352ac68c408e7f3c68d554244, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -98,7 +123,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638855982029169845
+  platformSettingsDirtyTick: 638856605086137170
   textureAssetName: 
   singleSpriteImportData:
   - name: 

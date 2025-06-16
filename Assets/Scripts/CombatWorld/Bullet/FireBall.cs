@@ -34,4 +34,9 @@ public class FireBall : MonoBehaviour, IBullet
     {
         this.target = target;
     }
+
+    public void SetDame(int dame)
+    {
+        throw new System.NotImplementedException();
+    }
 }

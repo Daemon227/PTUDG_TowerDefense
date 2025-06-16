@@ -20,7 +20,6 @@ public class KnightAI : MonoBehaviour
     public GameObject target;
 
     private Animator animator;
-    private bool isMoving = false;
 
     private void Awake()
     {
@@ -76,7 +75,6 @@ public class KnightAI : MonoBehaviour
         else // Nếu mục tiêu ở gần
         {
             // Dừng di chuyển và tấn công
-            isMoving = false;
             animator.SetBool("IsRun", false);
 
             // Xoay về hướng mục tiêu
@@ -121,7 +119,6 @@ public class KnightAI : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, pos) > 0.1f)
         {
-            isMoving = true;
             animator.SetBool("IsAttack", false);
             animator.SetBool("IsRun", true);
             transform.position = Vector3.MoveTowards(transform.position, pos, 1.5f * Time.deltaTime);
@@ -138,7 +135,6 @@ public class KnightAI : MonoBehaviour
         }
         else
         {
-            isMoving = false;
             animator.SetBool("IsRun", false);
             oldPos = currentPos;
         }

@@ -2,7 +2,42 @@ fileFormatVersion: 2
 guid: 55650779c28e15f4e9a2301a776b5a4f
 ScriptedImporter:
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Fired
+    second: {fileID: 7400000, guid: 9fa1bcb2aeb0e8642871893d30dc983d, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Idle_In
+    second: {fileID: 7400000, guid: 7b2202c206a1fc344960988539eeff80, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Idle_Out
+    second: {fileID: 7400000, guid: 02a7b0922e061704aa35c8b3992807cf, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: In
+    second: {fileID: 7400000, guid: 2f40c123b8859ec4b91ccb1767d966fe, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Original
+    second: {fileID: 7400000, guid: 9c3132a6e1860a24e8aef8918add2f5c, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Out
+    second: {fileID: 7400000, guid: d2c7323e305b65f4ba9e59bb141cebe5, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Run
+    second: {fileID: 7400000, guid: b929ef3cda22df844a71c6ddf4e4fe57, type: 2}
   serializedVersion: 2
   userData: 
   assetBundleName: 
@@ -98,7 +133,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638855981882825258
+  platformSettingsDirtyTick: 638856591071239379
   textureAssetName: 
   singleSpriteImportData:
   - name: 
