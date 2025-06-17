@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,9 +13,18 @@ public class EnemyAI : MonoBehaviour, IEnemy
     public int dame = 2;
     public float speed;
     public LayerMask layerMask;
+
+    // hieu ung chay mau
+    public GameObject bloodEffect;
+
+    // hb bar
     [HideInInspector] public EHpBar hpbar;
     [HideInInspector] public GameObject target;
 
+    // quan ly debuff
+    [HideInInspector] public bool canAction = true;
+    [HideInInspector] public float timeEffect = 0;
+    [HideInInspector] public float currentTime = 0;
     public virtual void HandleUnitActions()
     {
        
@@ -29,6 +39,8 @@ public class EnemyAI : MonoBehaviour, IEnemy
     {
         this.currentHp -= dame;
         hpbar.FillHpBar(currentHp);
+        GameObject blood = Instantiate(bloodEffect, transform.position, Quaternion.identity);
+        //blood.transform.position = transform.position;
         if (this.currentHp <= 0)
         {
             CombatManager.Instance.TakeCoin(coin);
@@ -44,5 +56,19 @@ public class EnemyAI : MonoBehaviour, IEnemy
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+    public void Freeze()
+    {
+        canAction = false;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        currentTime += Time.deltaTime;
+        if (currentTime > timeEffect)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            canAction = true;
+            currentTime = 0;
+        }
+        
     }
 }
