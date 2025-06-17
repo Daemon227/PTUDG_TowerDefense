@@ -7,6 +7,10 @@ public class KnightAI : MonoBehaviour
     public int currentHp;
     public int dame = 5;
     public LayerMask layerMask;
+
+    // hieu ung chay mau
+    public GameObject bloodEffect;
+
     private EHpBar hpbar;
 
     [HideInInspector] public Transform flagPos;
@@ -169,6 +173,7 @@ public class KnightAI : MonoBehaviour
     public void TakeDame(int dame)
     {
         currentHp -= dame;
+        GameObject blood = Instantiate(bloodEffect, transform.position, Quaternion.identity);
         if (hpbar != null)
         {
             hpbar.FillHpBar(currentHp);

@@ -24,7 +24,15 @@ public class TourchAI : EnemyAI
     }
     private void Update()
     {
-        HandleUnitActions();
+        if (canAction)
+        {
+            HandleUnitActions();
+        }
+        else
+        {
+            animator.Play("Original");
+            Freeze();
+        }
     }
     public override void HandleUnitActions()
     {

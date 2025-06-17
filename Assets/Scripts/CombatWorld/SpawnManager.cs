@@ -24,7 +24,7 @@ public class SpawnManager : MonoBehaviour
     private float currentTime = 0;
 
     // quan ly thoi gian delay giua 2 luot.
-    private float delayTimeBetween2Turn = 35f;
+    public float delayTimeBetween2Turn = 20f;
     private float delayTimer = 0;
 
     //quan ly so luong unit.

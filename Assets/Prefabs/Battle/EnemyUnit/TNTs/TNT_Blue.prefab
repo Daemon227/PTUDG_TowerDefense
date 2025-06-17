@@ -402,8 +402,12 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  bloodEffect: {fileID: 7952126611776329475, guid: f46a5141c6d492841bcc048b14271a4e, type: 3}
   hpbar: {fileID: 0}
   target: {fileID: 0}
+  canAction: 1
+  timeEffect: 0
+  currentTime: 0
   tntPrefab: {fileID: 4838694999979153443, guid: b2acada9c569a8a4f8605794df2a91d1, type: 3}
   attackPoint: {fileID: 5861958508676001474}
 --- !u!1 &7216596615174626626

@@ -209,8 +209,12 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
+  bloodEffect: {fileID: 7952126611776329475, guid: f46a5141c6d492841bcc048b14271a4e, type: 3}
   hpbar: {fileID: 0}
   target: {fileID: 0}
+  canAction: 1
+  timeEffect: 0
+  currentTime: 0
   boomEffect: {fileID: 8230907381545534681, guid: 0f658b4ef8f5d6549a0aed26a4fbae8c, type: 3}
 --- !u!1 &6484533481465436808
 GameObject:

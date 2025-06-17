@@ -473,5 +473,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
+  bloodEffect: {fileID: 7952126611776329475, guid: f46a5141c6d492841bcc048b14271a4e, type: 3}
   flagPos: {fileID: 0}
   target: {fileID: 0}
