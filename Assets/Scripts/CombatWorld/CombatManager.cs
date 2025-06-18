@@ -22,6 +22,9 @@ public class CombatManager : MonoBehaviour
     public static CombatManager Instance;
     public bool IsGameOver = false;
 
+    public GameObject winPanel;
+    public GameObject loosePanel;
+
     private void Awake()
     {
         if (Instance != null && Instance!= this)
@@ -69,6 +72,7 @@ public class CombatManager : MonoBehaviour
         {
             Debug.Log("GameOver");
             IsGameOver = true;
+            loosePanel.SetActive(true);
         }
     }
     
