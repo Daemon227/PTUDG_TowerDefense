@@ -8,4 +8,5 @@ public interface ITower
     public GameObject ChangePosPanel { get; }
     public void DetectTarget();
     public void Attack(GameObject target);
+    public AudioClip VoiceAudioClip { get; }
 }

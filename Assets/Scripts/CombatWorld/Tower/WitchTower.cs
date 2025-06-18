@@ -8,7 +8,7 @@ public class WitchTower : MonoBehaviour, ITower
     public GameObject witch;
     public GameObject newTower;
     public GameObject changPosPanel;
-
+    public AudioClip audioClip;
     // kiem soat delay khi ban dan
     private GameObject target;
     private float delayTime = 1.5f;
@@ -19,6 +19,8 @@ public class WitchTower : MonoBehaviour, ITower
     public float Radius => radius;
     public GameObject NewTower => newTower;
     public GameObject ChangePosPanel => changPosPanel;
+
+    public AudioClip VoiceAudioClip => audioClip;
 
     private void Update()
     {

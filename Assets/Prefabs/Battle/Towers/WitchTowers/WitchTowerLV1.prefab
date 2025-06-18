@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7323793574995645510}
   - component: {fileID: 6012795475377072308}
   - component: {fileID: 5731623458278271481}
+  - component: {fileID: 6871506605773836017}
   m_Layer: 0
   m_Name: Pawn_Blue
   m_TagString: Untagged
@@ -127,6 +128,104 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 9037211958122848477, guid: 782a512da7cb7af4d9560dce40f8f97d, type: 3}
   attackPoint: {fileID: 7408824095394620480}
   target: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: d2021c535ac03dc49ac99e493678e5af, type: 3}
+--- !u!82 &6871506605773836017
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737536127238212517}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2754751597262922496
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,9 +413,9 @@ GameObject:
   - component: {fileID: 8831910098304092059}
   - component: {fileID: 505329723795323434}
   - component: {fileID: 3052865285978020610}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WitchTowerLV1
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -459,6 +558,7 @@ MonoBehaviour:
   witch: {fileID: 1737536127238212517}
   newTower: {fileID: 7033113900469736367, guid: 3319482a41857ec4fad52502a8f93b85, type: 3}
   changPosPanel: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: e43abf495faf5fc44b4f219603d95476, type: 3}
 --- !u!114 &3052865285978020610
 MonoBehaviour:
   m_ObjectHideFlags: 0

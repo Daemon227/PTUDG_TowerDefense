@@ -187,9 +187,9 @@ GameObject:
   - component: {fileID: 1574819349768427798}
   - component: {fileID: 2696106951017466016}
   - component: {fileID: 93860018542649190}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WitchTowerLV2
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -332,6 +332,7 @@ MonoBehaviour:
   witch: {fileID: 8157018380947326193}
   newTower: {fileID: 4509500936717596341, guid: dbdc02f94ad5e264f8b88ea1b6564e0e, type: 3}
   changPosPanel: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: e43abf495faf5fc44b4f219603d95476, type: 3}
 --- !u!114 &93860018542649190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +358,7 @@ GameObject:
   - component: {fileID: 3090925975287541869}
   - component: {fileID: 3463788277328237132}
   - component: {fileID: 1499451445001538569}
+  - component: {fileID: 4295460786685856316}
   m_Layer: 0
   m_Name: Pawn_Purple
   m_TagString: Untagged
@@ -472,3 +474,101 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 3927360945776156522, guid: 089858867bf7e1047ab105a8f5c08c97, type: 3}
   attackPoint: {fileID: 3047421288690925504}
   target: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: d2021c535ac03dc49ac99e493678e5af, type: 3}
+--- !u!82 &4295460786685856316
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8157018380947326193}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

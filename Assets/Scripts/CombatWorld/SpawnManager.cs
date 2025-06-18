@@ -19,6 +19,9 @@ public class SpawnManager : MonoBehaviour
     // vi tri sinh quai hien tai
     private int currentPos = 0;
 
+    // kiem tra co boss chua
+    private bool isHasBos = false;
+
     // quan ly thoi gian spawn lien tiep giua 2 unit.
     private float timeToSpawn = 0.5f;
     private float currentTime = 0;
@@ -58,6 +61,15 @@ public class SpawnManager : MonoBehaviour
         GameObject enemyUnit = Instantiate(currentEnemyUnitPrefabs[randomUnit], SpawnPos[currentPos].position, Quaternion.identity);
         enemyUnit.GetComponent<EnemyAI>().SetWayPoint(paths[currentPos].wayPoints);
         units.Add(enemyUnit);
+
+        if (currentTurn == turnDatas.Count - 1 && !isHasBos)
+        {
+            GameObject boss = Instantiate(bossPrefab, SpawnPos[currentPos].position, Quaternion.identity);
+            boss.GetComponent<EnemyAI>().SetWayPoint(paths[currentPos].wayPoints);
+            isHasBos = true;
+
+            AudioManager.Instance.isChangeAudioClip = true;
+        }
     }
 
     public void HandleSpawnByTurn()

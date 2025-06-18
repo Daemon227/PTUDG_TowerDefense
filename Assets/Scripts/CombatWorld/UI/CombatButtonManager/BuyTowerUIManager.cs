@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class BuyTowerUIManager : MonoBehaviour
 {
+    private AudioSource audioSource;
+    [HideInInspector] public AudioClip currentAudioClip;
+    public AudioClip notEnoughtMoneyClip;
+    public AudioClip sellTowerClip;
+
     public static BuyTowerUIManager Instance;
     private Dictionary<Vector3, GameObject> listSpawnPos = new Dictionary<Vector3, GameObject>();
     public Vector3 currentPosToSpawnTower = Vector3.zero;
@@ -14,7 +19,7 @@ public class BuyTowerUIManager : MonoBehaviour
     public Dictionary<Vector3, GameObject> ListSpawnPos { get => listSpawnPos; set => listSpawnPos = value; }
     public Dictionary<Vector3, SpawnPos> ListSpawnPosObjects { get => listSpawnPosObjects; set => listSpawnPosObjects = value; }
 
-    private void Start()
+    private void Awake()
     {
         if (Instance!= null && Instance != this)
         {
@@ -22,6 +27,9 @@ public class BuyTowerUIManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null) gameObject.AddComponent<AudioSource>();
     }
     
     public void SpawnTower(GameObject gameObject)
@@ -38,6 +46,9 @@ public class BuyTowerUIManager : MonoBehaviour
             {
                 listSpawnPosObjects[currentPosToSpawnTower].HideSpawnPosAfterSpawn();
             }
+            currentAudioClip = tower.GetComponent<ITower>().VoiceAudioClip;
+            audioSource.clip = currentAudioClip;
+            audioSource.Play();
         }
     }
 
@@ -64,10 +75,15 @@ public class BuyTowerUIManager : MonoBehaviour
             CombatManager.Instance.Coin -= amount;
 
             CombatPanelManager.Instance.CloseAllUI();
+            currentAudioClip = tower.GetComponent<ITower>().VoiceAudioClip;
+            audioSource.clip = currentAudioClip;
+            audioSource.Play();
         }
         else
         {
             Debug.Log("not enought money");
+            audioSource.clip = notEnoughtMoneyClip;
+            audioSource.Play();
         }
     }
 
@@ -88,5 +104,22 @@ public class BuyTowerUIManager : MonoBehaviour
 
         listSpawnPosObjects[currentPosToSpawnTower].ShowSpawnPosAgain();
         CombatPanelManager.Instance.CloseAllUI();
+
+        audioSource.clip = sellTowerClip;
+        audioSource.Play();
+    }
+
+    public void RemoveTower()
+    {
+        if (!listSpawnPos.ContainsKey(currentPosToSpawnTower))
+        {
+            Debug.Log("khong co");
+            return;
+        }
+        Debug.Log("Cos");
+        GameObject currentTower = listSpawnPos[currentPosToSpawnTower];
+        listSpawnPos[currentPosToSpawnTower] = null;
+        Destroy(currentTower);
+        listSpawnPosObjects[currentPosToSpawnTower].ShowSpawnPosAgain();
     }
 }

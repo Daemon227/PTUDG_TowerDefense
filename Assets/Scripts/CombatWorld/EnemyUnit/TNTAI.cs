@@ -39,7 +39,7 @@ public class TNTAI : EnemyAI
     }
     public override void HandleUnitActions()
     {
-        target = enemyAttack.DetectTargetUnit(radius, layerMask);
+        target = enemyAttack.DetectTargetUnit(radius, unitLayerMask);
         if (target != null && target.transform.position.x >= transform.position.x)
         {
             animator.Play("Attack");

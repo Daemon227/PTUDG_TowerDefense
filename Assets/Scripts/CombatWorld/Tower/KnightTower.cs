@@ -12,6 +12,7 @@ public class KnightTower : MonoBehaviour, ITower
     public GameObject newTower;
     public GameObject flag;
     public GameObject changPosPanel;
+    public AudioClip audioClip;
 
     private List<GameObject> knights = new List<GameObject>();
     // kiem soat delay khi hoi sinh knight sau khi chet
@@ -24,6 +25,7 @@ public class KnightTower : MonoBehaviour, ITower
     public float Radius => radius;
     public GameObject NewTower => newTower;
     public GameObject ChangePosPanel => changPosPanel;
+    public AudioClip VoiceAudioClip => audioClip;
 
     private void Update()
     {

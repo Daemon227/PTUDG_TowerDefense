@@ -100,9 +100,9 @@ GameObject:
   - component: {fileID: 6193286865697264787}
   - component: {fileID: 8024267730448777343}
   - component: {fileID: 5367145792130934201}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WitchTowerLV3
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -245,6 +245,7 @@ MonoBehaviour:
   witch: {fileID: 7907862448660426575}
   newTower: {fileID: 0}
   changPosPanel: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: e43abf495faf5fc44b4f219603d95476, type: 3}
 --- !u!114 &5367145792130934201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +358,7 @@ GameObject:
   - component: {fileID: 2130863319459719244}
   - component: {fileID: 6185707352965313107}
   - component: {fileID: 9033870783597038194}
+  - component: {fileID: 3922953978980653041}
   m_Layer: 0
   m_Name: Pawn_Red
   m_TagString: Untagged
@@ -472,3 +474,101 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 3927360945776156522, guid: ae65f370d2c79be4cbd3dfdbac9ada80, type: 3}
   attackPoint: {fileID: 8080430498343118741}
   target: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: d2021c535ac03dc49ac99e493678e5af, type: 3}
+--- !u!82 &3922953978980653041
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7907862448660426575}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

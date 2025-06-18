@@ -188,9 +188,9 @@ GameObject:
   - component: {fileID: 3088311459775031357}
   - component: {fileID: 1669740066458016687}
   - component: {fileID: 5715935402145331494}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: KnightTowerLV1
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -349,6 +349,7 @@ MonoBehaviour:
   newTower: {fileID: 2765356480798640992, guid: a196d0e9a0da9014f9976cbe1d12c6bb, type: 3}
   flag: {fileID: 2111898964073202239}
   changPosPanel: {fileID: 7128518942913154257}
+  audioClip: {fileID: 8300000, guid: 9a0b7eeb5f70f1f409ac178e7cb81d2f, type: 3}
 --- !u!114 &5715935402145331494
 MonoBehaviour:
   m_ObjectHideFlags: 0

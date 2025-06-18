@@ -51,7 +51,7 @@ public class BarrelAI : EnemyAI
 
     public override void HandleUnitActions()
     {
-        target = enemyAttack.DetectTargetUnit(radius, layerMask);
+        target = enemyAttack.DetectTargetUnit(radius, unitLayerMask);
         if (currentHp > 0)
         {
             if (target != null)
