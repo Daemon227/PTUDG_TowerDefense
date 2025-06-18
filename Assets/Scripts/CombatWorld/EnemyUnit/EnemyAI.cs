@@ -12,7 +12,7 @@ public class EnemyAI : MonoBehaviour, IEnemy
     public int coin = 15;
     public int dame = 2;
     public float speed;
-    public LayerMask layerMask;
+    public LayerMask unitLayerMask;
 
     // hieu ung chay mau
     public GameObject bloodEffect;
@@ -47,6 +47,17 @@ public class EnemyAI : MonoBehaviour, IEnemy
             Destroy(gameObject);
         }
     }
+
+    public void Heal(int hp)
+    {
+        if (currentHp <= 0) return;
+        currentHp += hp;
+        if (currentHp > maxHP)
+        {
+            currentHp = maxHP;
+        }
+        hpbar.FillHpBar(currentHp);
+    }
     public virtual void AttackEvent()
     {
         if (target == null) return;
@@ -68,7 +79,6 @@ public class EnemyAI : MonoBehaviour, IEnemy
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             canAction = true;
             currentTime = 0;
-        }
-        
+        } 
     }
 }

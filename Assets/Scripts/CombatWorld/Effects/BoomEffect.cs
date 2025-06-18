@@ -7,7 +7,7 @@ public class BoomEffect : MonoBehaviour
     [HideInInspector] public float radius;
     [HideInInspector] public int dame;
 
-    private void Update()
+    private void Start()
     {
         StartCoroutine(Attack());
     }

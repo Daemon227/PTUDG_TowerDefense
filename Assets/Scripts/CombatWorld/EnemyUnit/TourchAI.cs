@@ -36,7 +36,7 @@ public class TourchAI : EnemyAI
     }
     public override void HandleUnitActions()
     {
-        target = enemyAttack.DetectTargetUnit(radius, layerMask);
+        target = enemyAttack.DetectTargetUnit(radius, unitLayerMask);
         if (target != null)
         {
             animator.Play("Attack");

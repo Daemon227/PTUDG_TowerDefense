@@ -6,6 +6,13 @@ public class WitchAI : MonoBehaviour
     public Transform attackPoint;
     [HideInInspector] public GameObject target;
 
+    private AudioSource audioSource;
+    public AudioClip audioClip;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
+    }
     private void Update()
     {
         checkDir();
@@ -24,6 +31,9 @@ public class WitchAI : MonoBehaviour
     }
     public void Shoot()
     {
+        audioSource.clip = audioClip;
+        audioSource.Play();
+
         GameObject newBullet = Instantiate(bulletPrefabs, attackPoint.position, Quaternion.identity);
         newBullet.GetComponent<IBullet>().SetTarget(target);
         gameObject.GetComponent<Animator>().Play("Idle");

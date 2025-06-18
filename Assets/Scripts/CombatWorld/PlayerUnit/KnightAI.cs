@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Buffers;
+using UnityEngine;
 
 public class KnightAI : MonoBehaviour
 {
@@ -24,7 +25,14 @@ public class KnightAI : MonoBehaviour
     public GameObject target;
 
     private Animator animator;
-
+    // quan ly am thanh
+    private AudioSource audioSource;
+    public AudioClip attackClip;
+    public AudioClip runClip;
+    // quan ly debuff
+    [HideInInspector] public bool canAction = true;
+    [HideInInspector] public float timeEffect = 0;
+    [HideInInspector] public float currentTime = 0;
     private void Awake()
     {
         currentHp = maxHP;
@@ -38,20 +46,31 @@ public class KnightAI : MonoBehaviour
         {
             hpbar.SetHpInfor(maxHP);
         }
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
     }
 
     private void Update()
     {
-
-        if (IsChangePos())
+        if (canAction)
         {
-            GetRandomPos(flagPos, 1.5f, 1);
-            MoveToTarget(fixedMoveTarget);
+            if (IsChangePos())
+            {
+                GetRandomPos(flagPos, 1.5f, 1);
+                MoveToTarget(fixedMoveTarget);
+            }
+            else
+            {
+                CheckDistanceToFlag();
+                HandleUnitAction();
+            }
         }
         else
         {
-            CheckDistanceToFlag();
-            HandleUnitAction();
+            animator.SetBool("IsAttack", false);
+            animator.SetBool("IsRun", false);
+            animator.SetBool("IsFreeze", true);
+            Freeze();
         }
     }
 
@@ -62,6 +81,7 @@ public class KnightAI : MonoBehaviour
         {
             animator.SetBool("IsAttack", false);
             animator.SetBool("IsRun", false);
+            animator.SetBool("IsFreeze", false);
             target = unitAttack.DetectTargetUnit(radius, layerMask);
             return;
         }
@@ -79,7 +99,9 @@ public class KnightAI : MonoBehaviour
         else // Nếu mục tiêu ở gần
         {
             // Dừng di chuyển và tấn công
+            animator.SetBool("IsAttack", true);
             animator.SetBool("IsRun", false);
+            animator.SetBool("IsFreeze", false);
 
             // Xoay về hướng mục tiêu
             checkDir();
@@ -125,6 +147,7 @@ public class KnightAI : MonoBehaviour
         {
             animator.SetBool("IsAttack", false);
             animator.SetBool("IsRun", true);
+            animator.SetBool("IsFreeze", false);
             transform.position = Vector3.MoveTowards(transform.position, pos, 1.5f * Time.deltaTime);
 
             // Xoay theo hướng di chuyển
@@ -160,12 +183,15 @@ public class KnightAI : MonoBehaviour
         if (target == null) return;
         animator.SetBool("IsAttack", true);
         animator.SetBool("IsRun", false);
+        animator.SetBool("IsFreeze", false);
     }
 
     public void AttackEvent()
     {
         if (target != null)
         {
+            audioSource.clip = attackClip;
+            audioSource.Play();
             target.GetComponent<EnemyAI>().TakeDame(dame);
         }
     }
@@ -185,6 +211,19 @@ public class KnightAI : MonoBehaviour
         }
     }
 
+    public void Freeze()
+    {
+        canAction = false;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        currentTime += Time.deltaTime;
+        if (currentTime > timeEffect)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            canAction = true;
+            currentTime = 0;
+        }
+
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
