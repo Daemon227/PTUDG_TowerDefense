@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3836031c3523bfb47980afc64fe18061, type: 3}
   m_Name: Thap5
   m_EditorClassIdentifier: 
-  towerName: Thap cung lv2
-  towerSprite: {fileID: 0}
+  towerName: Purple Archer Tower
+  towerSprite: {fileID: 4063745958444542457, guid: 7f706953cc06101498bb6f3a78a72476, type: 3}
   price: 0
   rateSpeed: 0
   damage: 0

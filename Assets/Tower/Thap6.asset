@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3836031c3523bfb47980afc64fe18061, type: 3}
   m_Name: Thap6
   m_EditorClassIdentifier: 
-  towerName: Thap cung lv3
-  towerSprite: {fileID: 0}
+  towerName: Red Archer Tower
+  towerSprite: {fileID: -5443547844040458350, guid: 4e6334c84083cc9409693f146e6a8afa, type: 3}
   price: 0
   rateSpeed: 0
   damage: 0

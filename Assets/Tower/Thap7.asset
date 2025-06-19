@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3836031c3523bfb47980afc64fe18061, type: 3}
   m_Name: Thap7
   m_EditorClassIdentifier: 
-  towerName: Nha linh 1
-  towerSprite: {fileID: 0}
+  towerName: Blue Knight Tower
+  towerSprite: {fileID: 21300000, guid: d4eb5a2c2eb60c448a57d93c59cb4915, type: 3}
   price: 0
   rateSpeed: 0
   damage: 0
