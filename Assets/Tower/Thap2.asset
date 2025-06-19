@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3836031c3523bfb47980afc64fe18061, type: 3}
   m_Name: Thap2
   m_EditorClassIdentifier: 
-  towerName: Thap phep lv2
-  towerSprite: {fileID: 0}
+  towerName: Purple Witch Tower
+  towerSprite: {fileID: 21300000, guid: f9a011de58d573d46912739663b6f5d6, type: 3}
   price: 0
   rateSpeed: 0
   damage: 0
