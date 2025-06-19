@@ -31,7 +31,14 @@ public class BuyTowerUIManager : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null) gameObject.AddComponent<AudioSource>();
     }
-    
+    public GameObject GetCurrentObject()
+    {
+        if (!listSpawnPos.ContainsKey(currentPosToSpawnTower))
+        {
+            return null ;
+        }
+        return listSpawnPos[currentPosToSpawnTower];
+    }
     public void SpawnTower(GameObject gameObject)
     {  
         if (!listSpawnPos.ContainsKey(currentPosToSpawnTower))

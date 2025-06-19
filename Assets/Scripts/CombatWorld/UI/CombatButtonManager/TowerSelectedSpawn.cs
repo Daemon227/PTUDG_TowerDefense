@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
@@ -5,6 +6,11 @@ using UnityEngine.UIElements;
 public class TowerSelectedSpawn : MonoBehaviour, IPointerClickHandler
 {
     public GameObject towerPrefab;
+    public TextMeshProUGUI coinText;
+    private void Start()
+    {
+        coinText.text = towerPrefab.GetComponent<ITower>().Cost + "";
+    }
     public void OnPointerClick(PointerEventData eventData)
     {
         int amount = towerPrefab.GetComponent<ITower>().Cost;
