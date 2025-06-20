@@ -1,18 +1,20 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class KnightTower : MonoBehaviour, ITower
 {
     public int cost = 50;
+    public int dame = 5;
     public LayerMask enemyLayerMask;
     public float radius = 3;
     public int numberKnight = 3;
     public GameObject knight;
     public GameObject newTower;
     public GameObject flag;
-    public GameObject changPosPanel;
+    public bool canChangePos = true;
     public AudioClip audioClip;
+    public string description = "Triệu hồi 3 đơn vị lính tấn công kẻ địch";
 
     private List<GameObject> knights = new List<GameObject>();
     // kiem soat delay khi hoi sinh knight sau khi chet
@@ -21,11 +23,16 @@ public class KnightTower : MonoBehaviour, ITower
     private float currentTime = 0;
     private bool isFirstSpawm = true;
 
+    #region PUBLIC SOME PRIVATE INFOR
     public int Cost => cost;
     public float Radius => radius;
     public GameObject NewTower => newTower;
-    public GameObject ChangePosPanel => changPosPanel;
+    public bool CanChangePos => canChangePos;
     public AudioClip VoiceAudioClip => audioClip;
+    public int Dame => dame;
+    public string GetDescription => description;
+ 
+    #endregion
 
     private void Update()
     {

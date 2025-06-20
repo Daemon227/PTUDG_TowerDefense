@@ -11,6 +11,7 @@ public class MinotaurBoomEffect : MonoBehaviour
     public IEnumerator EndGame()
     {
         yield return new WaitForSeconds(0.8f);
+        CombatManager.Instance.IsWin = true;
         CombatManager.Instance.IsGameOver = true;
     }
 }

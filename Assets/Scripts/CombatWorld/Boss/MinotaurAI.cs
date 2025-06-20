@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MinotaurAI : EnemyAI
+public class MinotaurAI : EnemyAI, IBoss
 {
     public GameObject boomEffect;
     public GameObject skillEffect;
@@ -116,8 +116,7 @@ public class MinotaurAI : EnemyAI
         }
     }
     public void DeadEvent()
-    {
-        
+    {   
         Instantiate(boomEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

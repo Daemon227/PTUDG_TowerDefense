@@ -21,9 +21,12 @@ public class CombatManager : MonoBehaviour
 
     public static CombatManager Instance;
     public bool IsGameOver = false;
+    public bool IsWin = false;
 
     public GameObject winPanel;
     public GameObject loosePanel;
+
+    private SpawnManager spawnManager;
 
     private void Awake()
     {
@@ -33,18 +36,20 @@ public class CombatManager : MonoBehaviour
             return;
         }
         Instance = this;
+
+        spawnManager = GetComponent<SpawnManager>();
     }
     private void Update()
     {
         if (IsGameOver)
         {
-            Time.timeScale = 0;
+            SetWin();
         }
         else
         {
             Time.timeScale = 1;
         }
-            ActiveTakeDamePanel();
+        ActiveTakeDamePanel();
     }
     public bool CheckCost(int amount)
     {
@@ -67,13 +72,25 @@ public class CombatManager : MonoBehaviour
             this.hp -= 1;
             isActive = true;
         }
-
-        if (hp == 0)
+        if (hp <= 0)
         {
             Debug.Log("GameOver");
             IsGameOver = true;
+        }
+    }
+
+    public void SetWin()
+    {
+        if(IsWin)
+        {
+            winPanel.GetComponent<VictoryPanel>().rubyCanRecive = spawnManager.rubyCanRecive;
+            winPanel.SetActive(true);        
+        }
+        else 
+        {
             loosePanel.SetActive(true);
         }
+        //Time.timeScale = 0;
     }
     
     public void ActiveTakeDamePanel()

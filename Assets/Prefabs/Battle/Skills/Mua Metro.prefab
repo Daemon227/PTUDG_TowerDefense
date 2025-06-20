@@ -52,6 +52,10 @@ MonoBehaviour:
   numberMetro: 15
   isAttack: 1
   countdown: 4
+  cost: 20
+  skillSprite: {fileID: 21300000, guid: 37ff8bdf3f042ae4ba02574b6d95715b, type: 3}
+  description: "T\u1EA1o 1 tr\u1EADn m\u01B0a thi\xEAn th\u1EA1ch r\u01A1i xu\u1ED1ng
+    g\xE2y s\xE1t th\u01B0\u01A1ng l\xEAn k\u1EBB \u0111\u1ECBch"
 --- !u!1 &5546208412255653454
 GameObject:
   m_ObjectHideFlags: 0

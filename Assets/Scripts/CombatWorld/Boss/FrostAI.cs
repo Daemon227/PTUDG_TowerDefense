@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class FrostAI : EnemyAI
+public class FrostAI : EnemyAI, IBoss
 {
     private EnemyMove enemyMove;
     private UnitAttack enemyAttack;
@@ -88,6 +88,7 @@ public class FrostAI : EnemyAI
     }
     public void DeadEvent()
     {
+        CombatManager.Instance.IsWin = true;
         CombatManager.Instance.IsGameOver = true;
         Destroy(gameObject);
     }

@@ -325,14 +325,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 60
+  dame: 15
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
   radius: 4.5
   witch: {fileID: 8157018380947326193}
   newTower: {fileID: 4509500936717596341, guid: dbdc02f94ad5e264f8b88ea1b6564e0e, type: 3}
-  changPosPanel: {fileID: 0}
+  canChangePos: 0
   audioClip: {fileID: 8300000, guid: e43abf495faf5fc44b4f219603d95476, type: 3}
+  description: "S\xE1t th\u01B0\u01A1ng cao, t\u1EA7m b\u1EAFn r\u1ED9ng nh\u01B0ng
+    t\u1ED1c \u0111\u1ED9 b\u1EAFn ch\u1EADm"
 --- !u!114 &93860018542649190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,7 +491,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0

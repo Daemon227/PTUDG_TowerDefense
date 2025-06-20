@@ -29,6 +29,7 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         ChangeAudioClip();
+        EndAudio();
     }
     private void ChangeAudioClip()
     {
@@ -37,6 +38,13 @@ public class AudioManager : MonoBehaviour
             audioSource.clip = bossClip;
             audioSource.Play();
             isChangeAudioClip = false;
+        }
+    }
+    public void EndAudio()
+    {
+        if (CombatManager.Instance.IsGameOver)
+        {
+            audioSource.Pause();
         }
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MetroSkill : MonoBehaviour, ISkill
@@ -9,7 +10,13 @@ public class MetroSkill : MonoBehaviour, ISkill
     public int numberMetro;
     [HideInInspector] public bool isAttack = false;
     public float countdown;
+    public int cost = 20;
+    public Sprite skillSprite;
+    public string description;
     public float CountDown => countdown;
+    public int Cost => cost;
+    public Sprite SkillSprite => skillSprite;
+    public string Description => description;
 
     private void Start()
     {
@@ -33,5 +40,8 @@ public class MetroSkill : MonoBehaviour, ISkill
 
 public interface ISkill
 {
+    public Sprite SkillSprite { get; }
     public float CountDown { get; }
+    public int Cost { get; }
+    public string Description { get; }
 }

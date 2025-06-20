@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public int rubyCanRecive = 10;
     [Header("Path Settup")]
     public List<Path> paths;
     // quan ly danh sach unit va vi tri spawn
     public List<Transform> SpawnPos;
-
     // quan ly theo turn data:
     public GameObject bossPrefab;
     public List<TurnData> turnDatas;
+
     private int currentTurn = 0;
     private List<GameObject> currentEnemyUnitPrefabs;
 

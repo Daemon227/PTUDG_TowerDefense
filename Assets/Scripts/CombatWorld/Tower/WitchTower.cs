@@ -1,26 +1,32 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WitchTower : MonoBehaviour, ITower
 {
     public int cost = 50;
+    public int dame = 15;
     public LayerMask enemyLayerMask;
     public float radius = 3;
     public GameObject witch;
     public GameObject newTower;
-    public GameObject changPosPanel;
+    public bool canChangePos;
     public AudioClip audioClip;
+    public string description = "Sát thương cao, tầm bắn rộng nhưng tốc độ bắn chậm";
+
     // kiem soat delay khi ban dan
     private GameObject target;
     private float delayTime = 1.5f;
     private float currentTime = 2;
     private bool isFirstTimeShoot = true;
 
+    #region PUBLIC SOME PRIVATE INFOR
     public int Cost => cost;
     public float Radius => radius;
     public GameObject NewTower => newTower;
-    public GameObject ChangePosPanel => changPosPanel;
-
+    public bool CanChangePos => canChangePos;
     public AudioClip VoiceAudioClip => audioClip;
+    public int Dame => dame;
+    public string GetDescription => description;
+    #endregion
 
     private void Update()
     {
