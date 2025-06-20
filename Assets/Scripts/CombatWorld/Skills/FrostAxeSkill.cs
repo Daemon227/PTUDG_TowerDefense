@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class FrostAxeSkill : MonoBehaviour, ISkill
 {
+    public int id = 2;
     public Sprite skillSprite;
     public float countdown = 5f;
     public float dame = 5f;
@@ -14,6 +15,8 @@ public class FrostAxeSkill : MonoBehaviour, ISkill
     public Sprite SkillSprite => skillSprite;
 
     public string Description => description;
+
+    public int GetID => id;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

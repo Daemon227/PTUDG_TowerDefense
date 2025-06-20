@@ -13,7 +13,7 @@ public class Dynamite : MonoBehaviour, IBullet
     {
         if (collision.gameObject == target.gameObject)
         {
-            collision.gameObject.GetComponent<KnightAI>().TakeDame(dame);
+            collision.gameObject.GetComponent<IPlayerUnit>().TakeDame(dame);
             Destroy(this.gameObject);
         }
     }

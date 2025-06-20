@@ -1,7 +1,9 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -19,31 +21,59 @@ public class SpawnManager : MonoBehaviour
 
     // vi tri sinh quai hien tai
     private int currentPos = 0;
-
     // kiem tra co boss chua
     private bool isHasBos = false;
-
     // quan ly thoi gian spawn lien tiep giua 2 unit.
     private float timeToSpawn = 0.5f;
     private float currentTime = 0;
-
     // quan ly thoi gian delay giua 2 luot.
     public float delayTimeBetween2Turn = 20f;
-    private float delayTimer = 0;
+    private float delayTimer ;
+
+    // quan ly thoi gian delay luot dau tien.
+    public float firtTimeDelay = 15f;
+    private float timcount;
 
     //quan ly so luong unit.
     private List<GameObject> units = new List<GameObject>();
     private int limitedUnitCanSpawn = 0;
 
-    private bool isNextTurn = false;// quan ly sinh turn moi nhanh
+
+    public bool isCanSpawn = false;
+    public bool isNextTurn = false;
 
     //quan ly UI
     public TextMeshProUGUI turnText;
+    public TextMeshProUGUI notifiText;
 
+    private void Start()
+    {
+        delayTimer = delayTimeBetween2Turn;
+        timcount = firtTimeDelay;
+    }
     private void Update()
     {
-        HandleSpawnByTurn();
-        turnText.text = "Turn: " + (currentTurn + 1) + "/" + turnDatas.Count;
+        FirstSettup();
+        if(isCanSpawn && currentTurn < turnDatas.Count)
+        {
+            HandleSpawnByTurn();
+            SetNextTurn();
+        }
+        turnText.text = "Lượt: " + (currentTurn + 1) + "/" + turnDatas.Count;
+
+    }
+    public void FirstSettup()
+    {
+        if (isCanSpawn == false)
+        {
+            timcount -= Time.deltaTime;
+            notifiText.text = "Đợt tấn công đầu tiên sẽ bắt đầu sau: " + timcount.ToString("F0") + " giây";
+            if (timcount <= 0)
+            {
+                notifiText.transform.parent.gameObject.SetActive(false);
+                isCanSpawn = true;
+            }
+        }
     }
     public void SetTurn()
     {
@@ -75,7 +105,7 @@ public class SpawnManager : MonoBehaviour
 
     public void HandleSpawnByTurn()
     {
-        if (units.Count == 0 || isNextTurn)
+        if (units.Count == 0)
         {
             SetTurn();
         }
@@ -87,20 +117,34 @@ public class SpawnManager : MonoBehaviour
                 SpawnEnemy();
                 currentTime = 0;
             }
-        }
+        } 
         else
         {
-            delayTimer += Time.deltaTime;
-            if (delayTimer >= delayTimeBetween2Turn)
+            isNextTurn = true;
+        }
+    }
+    public void SetNextTurn()
+    {
+        if (isNextTurn && currentTurn < turnDatas.Count - 1)
+        {
+            delayTimer -= Time.deltaTime;
+            notifiText.transform.parent.gameObject.SetActive(true);
+            notifiText.text = "Đợt tấn công tiếp theo sẽ bắt đầu sau: " + delayTimer.ToString("F0") + " giây";
+            if (delayTimer <= 0)
             {
                 units.Clear();
                 currentTurn += 1;
-                delayTimer = 0;
+                delayTimer = delayTimeBetween2Turn;
+                notifiText.gameObject.SetActive(false);
+                isNextTurn = false;
             }
+        }
+        else
+        {
+            notifiText.transform.parent.gameObject.SetActive(false);
         }
     }
 }
-
 [System.Serializable]
 public class Path
 {

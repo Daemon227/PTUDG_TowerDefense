@@ -18,7 +18,7 @@ public class BoomEffect : MonoBehaviour
         {
             if (c.CompareTag("Player"))
             {
-                c.gameObject.GetComponent<KnightAI>().TakeDame(dame);
+                c.gameObject.GetComponent<IPlayerUnit>().TakeDame(dame);
             }
             if (c.CompareTag("Enemy"))
             {

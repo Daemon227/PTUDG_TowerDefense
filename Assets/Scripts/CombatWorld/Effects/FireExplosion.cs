@@ -26,7 +26,7 @@ public class FireExplosion : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<KnightAI>().TakeDame(dame);
+            collision.gameObject.GetComponent<IPlayerUnit>().TakeDame(dame);
         }
     }
 }

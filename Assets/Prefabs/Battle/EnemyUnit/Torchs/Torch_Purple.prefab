@@ -323,7 +323,7 @@ MonoBehaviour:
   coin: 15
   dame: 2
   speed: 2
-  layerMask:
+  unitLayerMask:
     serializedVersion: 2
     m_Bits: 64
   bloodEffect: {fileID: 7952126611776329475, guid: f46a5141c6d492841bcc048b14271a4e, type: 3}

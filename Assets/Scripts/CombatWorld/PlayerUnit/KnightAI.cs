@@ -1,7 +1,7 @@
 ﻿using System.Buffers;
 using UnityEngine;
 
-public class KnightAI : MonoBehaviour
+public class KnightAI : MonoBehaviour, IPlayerUnit
 {
     [SerializeField] private float radius = 1.5f;
     public int maxHP = 30;
@@ -70,7 +70,7 @@ public class KnightAI : MonoBehaviour
             animator.SetBool("IsAttack", false);
             animator.SetBool("IsRun", false);
             animator.SetBool("IsFreeze", true);
-            Freeze();
+            Freeze(timeEffect);
         }
     }
 
@@ -211,12 +211,13 @@ public class KnightAI : MonoBehaviour
         }
     }
 
-    public void Freeze()
+    public void Freeze(float timeEffect)
     {
+        this.timeEffect = timeEffect;
         canAction = false;
         gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         currentTime += Time.deltaTime;
-        if (currentTime > timeEffect)
+        if (currentTime > this.timeEffect)
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.white;
             canAction = true;

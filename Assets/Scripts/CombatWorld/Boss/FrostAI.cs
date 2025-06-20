@@ -95,9 +95,9 @@ public class FrostAI : EnemyAI, IBoss
     public override void AttackEvent()
     {
         if (target == null) return;
-        target.GetComponent<KnightAI>().TakeDame(dame);
-        target.GetComponent<KnightAI>().timeEffect = 2f;
-        target.GetComponent<KnightAI>().Freeze();
+        target.GetComponent<IPlayerUnit>().TakeDame(dame);
+        target.GetComponent<IPlayerUnit>().Freeze(2f);
+        
     }
     public void checkDir()
     {
