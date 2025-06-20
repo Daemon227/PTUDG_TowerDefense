@@ -23,6 +23,7 @@ public class CombatManager : MonoBehaviour
     public static CombatManager Instance;
     public bool IsGameOver = false;
     public bool IsWin = false;
+    public bool IsPauseGame = false;
     private bool hasHandledEndGame = false;
 
     public GameObject winPanel;
@@ -50,7 +51,11 @@ public class CombatManager : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 1;
+            if (IsPauseGame)
+            {
+                Time.timeScale = 0;
+            }
+            else Time.timeScale = 1;
         }
         ActiveTakeDamePanel();
     }
@@ -90,13 +95,8 @@ public class CombatManager : MonoBehaviour
             winPanel.GetComponent<VictoryPanel>().rubyCanRecive = spawnManager.rubyCanRecive;
             winPanel.SetActive(true);
 
-            ResourceManager.Instance.ruby += spawnManager.rubyCanRecive;
-
-            //PlayerPrefs.SetInt("PlayerRuby", ResourceManager.Instance.ruby);
-            //PlayerPrefs.Save();
             int currentIndex = SceneManager.GetActiveScene().buildIndex;
             int nextIndex = currentIndex + 1;
-
             string nextLevelKey = "Level" + nextIndex;
 
             PlayerPrefs.SetInt(nextLevelKey, 1);

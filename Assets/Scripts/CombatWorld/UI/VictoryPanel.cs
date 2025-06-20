@@ -6,7 +6,7 @@ public class VictoryPanel : MonoBehaviour
 {
     public TextMeshProUGUI rubyText;
     public float delayTime = 0.1f;
-    public int rubyCanRecive;
+    [HideInInspector] public int rubyCanRecive;
 
     private void Start()
     {

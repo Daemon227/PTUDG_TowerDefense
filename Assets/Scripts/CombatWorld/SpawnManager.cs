@@ -7,9 +7,6 @@ using UnityEngine.Playables;
 
 public class SpawnManager : MonoBehaviour
 {
-    public float startDelay = 5f;
-    private float startTimer = 0f;
-    private bool isStarted = false;
     public int rubyCanRecive = 10;
     [Header("Path Settup")]
     public List<Path> paths;
@@ -128,10 +125,11 @@ public class SpawnManager : MonoBehaviour
     }
     public void SetNextTurn()
     {
-        if (isNextTurn && currentTurn < turnDatas.Count - 1)
+        if (isNextTurn && currentTurn < turnDatas.Count -1)
         {
             delayTimer -= Time.deltaTime;
             notifiText.transform.parent.gameObject.SetActive(true);
+            notifiText.gameObject.SetActive(true);
             notifiText.text = "Đợt tấn công tiếp theo sẽ bắt đầu sau: " + delayTimer.ToString("F0") + " giây";
             if (delayTimer <= 0)
             {
