@@ -8,5 +8,5 @@ public class Enemy
     public int health;
     public float speed;
     public int damage;
-    public string difficulty; // "Low", "Medium", "High"
+    public string difficulty;
 }

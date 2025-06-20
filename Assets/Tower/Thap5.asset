@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Purple Archer Tower
   towerSprite: {fileID: 4063745958444542457, guid: 7f706953cc06101498bb6f3a78a72476, type: 3}
-  price: 0
-  rateSpeed: 0
-  damage: 0
-  description: 
+  price: 70
+  rateSpeed: Medium
+  damage: 7
+  description: "N\xE2ng c\u1EA5p t\u1ED1c \u0111\u1ED9 b\u1EAFn v\xE0 ph\u1EA1m vi,
+    hi\u1EC7u qu\u1EA3 h\u01A1n v\u1EDBi k\u1EBB \u0111\u1ECBch c\xF3 gi\xE1p nh\u1EB9."

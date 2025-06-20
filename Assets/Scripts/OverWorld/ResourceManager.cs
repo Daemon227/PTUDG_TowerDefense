@@ -12,9 +12,14 @@ public class ResourceManager : MonoBehaviour
     public static ResourceManager Instance;
     private void Awake()
     {
+        
         DontDestroyOnLoad(gameObject);
 
-        if(Instance!= null && Instance!= this)
+        if (PlayerPrefs.HasKey("PlayerRuby"))
+        {
+            ruby = PlayerPrefs.GetInt("PlayerRuby");
+        }
+        if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
