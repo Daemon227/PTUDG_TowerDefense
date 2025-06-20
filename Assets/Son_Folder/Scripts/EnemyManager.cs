@@ -7,7 +7,7 @@ public class EnemyManager : MonoBehaviour
     public EnemyData[] enemyList;
 
     [Header("UI Panel Left")]
-    public Text nameText, healthText, speedText, damageText, difficultyText;
+    public Text nameText, healthText, speedText, damageText, difficultyText, description;
     public Image selectedEnemyImage;
 
     [Header("UI Panel Right")]
@@ -34,6 +34,7 @@ public class EnemyManager : MonoBehaviour
         speedText.text = "Tốc độ: " + enemy.speed;
         damageText.text = "Sát thương: " + enemy.damage;
         difficultyText.text = "Độ khó: " + enemy.difficulty.ToString();
+        description.text = enemy.description;
 
         Transform buttonTransform = enemyButtons[index].transform;
 

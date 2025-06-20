@@ -9,6 +9,6 @@ public class EnemyData : ScriptableObject
     public float speed;
     public int damage;
     public DifficultyLevel difficulty;
-
+    public string description;
     public enum DifficultyLevel { Low, Medium, High }
 }
