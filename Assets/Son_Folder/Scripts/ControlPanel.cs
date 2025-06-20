@@ -15,7 +15,6 @@ public class ControlPanel : MonoBehaviour
 
     void Awake()
     {
-        // Khởi tạo mảng chứa tất cả các panel
         allPanels = new GameObject[] {
             MenuPanel, ShopPanel, CollectorPanel,
             EnemyCollectorPanel, TowerCollectorPanel,
@@ -75,6 +74,6 @@ public class ControlPanel : MonoBehaviour
 
     void Start()
     {
-        BackToMenu(); // Mở menu khi bắt đầu game
+        BackToMenu();
     }
 }

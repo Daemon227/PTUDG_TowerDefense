@@ -30,12 +30,12 @@ public class InventoryItemUI : MonoBehaviour
     void UpdateUI()
     {
         quantityText.text = quantity.ToString();
-        quantityText.gameObject.SetActive(quantity > 0);  // Ẩn nếu = 0
-        icon.enabled = quantity > 0;                      // Ẩn icon nếu chưa có
+        quantityText.gameObject.SetActive(quantity > 0);
+        icon.enabled = quantity > 0;
     }
 
     public void OnItemClick()
     {
-        descriptionText.text = description; // Ghi đè mô tả
+        descriptionText.text = description;
     }
 }

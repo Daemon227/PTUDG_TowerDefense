@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class EnemyManager : MonoBehaviour
 {
     [Header("Enemy Data")]
-    public EnemyData[] enemyList; // Kéo ScriptableObjects vào đây
+    public EnemyData[] enemyList;
 
     [Header("UI Panel Left")]
     public Text nameText, healthText, speedText, damageText, difficultyText;
@@ -28,7 +28,6 @@ public class EnemyManager : MonoBehaviour
 
         EnemyData enemy = enemyList[index];
 
-        // Hiển thị thông tin bên trái
         selectedEnemyImage.sprite = enemy.enemySprite;
         nameText.text = enemy.enemyName;
         healthText.text = "Máu: " + enemy.health;

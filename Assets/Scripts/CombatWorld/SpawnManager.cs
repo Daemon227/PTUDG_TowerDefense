@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    public float startDelay = 5f;
+    private float startTimer = 0f;
+    private bool isStarted = false;
     public int rubyCanRecive = 10;
     [Header("Path Settup")]
     public List<Path> paths;
@@ -42,6 +45,15 @@ public class SpawnManager : MonoBehaviour
 
     private void Update()
     {
+        if (!isStarted)
+        {
+            startTimer += Time.deltaTime;
+            if (startTimer >= startDelay)
+            {
+                isStarted = true;
+            }
+            return; // chưa đủ thời gian thì không gọi HandleSpawnByTurn
+        }
         HandleSpawnByTurn();
         turnText.text = "Turn: " + (currentTurn + 1) + "/" + turnDatas.Count;
     }

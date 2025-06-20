@@ -5,7 +5,7 @@ using UnityEngine;
 public class KnightTower : MonoBehaviour, ITower
 {
     public int cost = 50;
-    public int dame = 5;
+    public int dame = 3;
     public LayerMask enemyLayerMask;
     public float radius = 3;
     public int numberKnight = 3;

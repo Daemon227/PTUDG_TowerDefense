@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Red Archer Tower
   towerSprite: {fileID: -5443547844040458350, guid: 4e6334c84083cc9409693f146e6a8afa, type: 3}
-  price: 0
-  rateSpeed: 0
-  damage: 0
-  description: 
+  price: 100
+  rateSpeed: High
+  damage: 10
+  description: "Tr\u1EE5 b\u1EAFn cung t\u1ED1i th\u01B0\u1EE3ng, b\u1EAFn nhanh
+    v\xE0 m\u1EA1nh, g\xE2y s\xE1t th\u01B0\u01A1ng l\u1EDBn l\xEAn nhi\u1EC1u lo\u1EA1i
+    \u0111\u1ECBch."
