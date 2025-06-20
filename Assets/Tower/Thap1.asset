@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerName: Blue Witch Tower
   towerSprite: {fileID: 21300000, guid: dfeeef06df5e0164fa03caa3e10f2c99, type: 3}
-  price: 0
-  rateSpeed: 0
-  damage: 0
-  description: 
+  price: 60
+  rateSpeed: High
+  damage: 15
+  description: "Tr\u1EE5 ph\xE1p s\u01B0 s\u01A1 c\u1EA5p, ph\xF3ng \u0111\u1EA1n
+    ph\xE9p g\xE2y s\xE1t th\u01B0\u01A1ng l\xEAn m\u1EE5c ti\xEAu c\xF3 gi\xE1p
+    cao."

@@ -7,6 +7,9 @@ using UnityEngine.Playables;
 
 public class SpawnManager : MonoBehaviour
 {
+    public float startDelay = 5f;
+    private float startTimer = 0f;
+    private bool isStarted = false;
     public int rubyCanRecive = 10;
     [Header("Path Settup")]
     public List<Path> paths;

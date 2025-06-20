@@ -9,8 +9,8 @@ public class ControlSetting : MonoBehaviour
     public Button musicToggleButton;
     public Button sfxToggleButton;
 
-    public GameObject musicXIcon; // Dấu X cho nhạc
-    public GameObject sfxXIcon;   // Dấu X cho âm thanh SFX
+    public GameObject musicXIcon;
+    public GameObject sfxXIcon;
 
     private bool isMusicOn = true;
     private bool isSFXOn = true;

@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CombatManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class CombatManager : MonoBehaviour
     public static CombatManager Instance;
     public bool IsGameOver = false;
     public bool IsWin = false;
+    private bool hasHandledEndGame = false;
 
     public GameObject winPanel;
     public GameObject loosePanel;
@@ -41,9 +43,10 @@ public class CombatManager : MonoBehaviour
     }
     private void Update()
     {
-        if (IsGameOver)
+        if (IsGameOver && !hasHandledEndGame)
         {
-            SetWin();
+            hasHandledEndGame = true;
+            SetWin(); // chỉ gọi 1 lần duy nhất
         }
         else
         {
@@ -82,12 +85,27 @@ public class CombatManager : MonoBehaviour
 
     public void SetWin()
     {
-        if(IsWin)
+        if (IsWin)
         {
             winPanel.GetComponent<VictoryPanel>().rubyCanRecive = spawnManager.rubyCanRecive;
-            winPanel.SetActive(true);        
+            winPanel.SetActive(true);
+
+            ResourceManager.Instance.ruby += spawnManager.rubyCanRecive;
+
+            //PlayerPrefs.SetInt("PlayerRuby", ResourceManager.Instance.ruby);
+            //PlayerPrefs.Save();
+            int currentIndex = SceneManager.GetActiveScene().buildIndex;
+            int nextIndex = currentIndex + 1;
+
+            string nextLevelKey = "Level" + nextIndex;
+
+            PlayerPrefs.SetInt(nextLevelKey, 1);
+            PlayerPrefs.Save();
+
+        Debug.Log("Unlocked " + nextLevelKey);
+
         }
-        else 
+        else
         {
             loosePanel.SetActive(true);
             Time.timeScale = 0;

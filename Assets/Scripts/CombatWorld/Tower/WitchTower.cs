@@ -2,7 +2,7 @@
 
 public class WitchTower : MonoBehaviour, ITower
 {
-    public int cost = 50;
+    public int cost = 60;
     public int dame = 15;
     public LayerMask enemyLayerMask;
     public float radius = 3;
