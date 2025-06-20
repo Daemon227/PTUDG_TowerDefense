@@ -1,6 +1,7 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -18,7 +19,15 @@ public class EnemyMove : MonoBehaviour
         }
 
         transform.position = Vector2.MoveTowards(transform.position, currentTargetPos, speed * Time.deltaTime);
-
+        // Xoay theo hướng di chuyển
+        if (transform.position.x - currentTargetPos.x >= 0.5f)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
         if (Vector2.Distance(transform.position, currentTargetPos) < 0.03f)
         {
             currentWaypointIndex++;

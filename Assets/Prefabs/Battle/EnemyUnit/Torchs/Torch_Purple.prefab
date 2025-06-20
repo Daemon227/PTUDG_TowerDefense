@@ -197,7 +197,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 1991199022261403626, guid: 1a3c8f964c26ff842ba1403e3e1b3e7d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -318,11 +318,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wayPoints: []
   radius: 0.5
-  maxHP: 30
+  maxHP: 64
   currentHp: 0
-  coin: 15
-  dame: 2
-  speed: 2
+  coin: 10
+  dame: 7
+  speed: 1.3
   unitLayerMask:
     serializedVersion: 2
     m_Bits: 64

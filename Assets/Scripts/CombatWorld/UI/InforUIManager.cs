@@ -5,7 +5,11 @@ public class InforUIManager : MonoBehaviour
 {
     public TextMeshProUGUI coinText;
     public TextMeshProUGUI hpText;
-
+    private int maxHp = 0;
+    private void Start()
+    {
+        maxHp = CombatManager.Instance.Hp;
+    }
     private void Update()
     {
         SetCoinText();
@@ -17,6 +21,6 @@ public class InforUIManager : MonoBehaviour
     }
     public void SetHpText()
     {
-        hpText.text = CombatManager.Instance.Hp + "/10";
+        hpText.text = CombatManager.Instance.Hp + "/" + maxHp;
     }
 }

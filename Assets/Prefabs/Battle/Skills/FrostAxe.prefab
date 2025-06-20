@@ -244,9 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eade51b2d205f2408e65d804433d5cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 1
+  id: 0
   skillSprite: {fileID: 21300000, guid: 7428d99cf24fec34f8b8872019c62e04, type: 3}
-  countdown: 5
+  countdown: 10
   dame: 5
   timeEffect: 5
   cost: 25

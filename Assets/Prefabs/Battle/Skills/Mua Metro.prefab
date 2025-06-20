@@ -46,14 +46,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a70691f74b0ad04ca85ba95593b2fc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 2
+  id: 1
   startPoint: {fileID: 8875642902905276879}
   endPoint: {fileID: 6373052671080333937}
   metroPrefabs: {fileID: 9170473652434005956, guid: 9a3f5b2afa15e7d4ca8af06e21819dce, type: 3}
   numberMetro: 15
   isAttack: 1
-  countdown: 4
-  cost: 20
+  countdown: 10
+  cost: 50
   skillSprite: {fileID: 21300000, guid: a37a03a33f7e2b44b81bbc835e091f63, type: 3}
   description: "T\u1EA1o 1 tr\u1EADn m\u01B0a thi\xEAn th\u1EA1ch r\u01A1i xu\u1ED1ng
     g\xE2y s\xE1t th\u01B0\u01A1ng l\xEAn k\u1EBB \u0111\u1ECBch"
