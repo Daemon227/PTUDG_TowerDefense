@@ -110,7 +110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 9
   m_Sprite: {fileID: -9193477438797307809, guid: 4164213f2c8875c48b1b62247a37b4db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 715372744875831902, guid: cdbed987532906a4f9c8b4b2f2987742, type: 3}
   attackPoint: {fileID: 8988299498636662246}
   target: {fileID: 0}
+  dame: 0
   audioClip: {fileID: 8300000, guid: f4b7ecc6f99704948b539c26943cef83, type: 3}
 --- !u!82 &1531020477789035493
 AudioSource:
@@ -173,7 +174,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.8
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -425,7 +426,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 8
   m_Sprite: {fileID: 4063745958444542457, guid: 7f706953cc06101498bb6f3a78a72476, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -495,8 +496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9d408cacdef2fa47bffb060a8f1bd93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 70
-  dame: 5
+  cost: 110
+  dame: 11
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128

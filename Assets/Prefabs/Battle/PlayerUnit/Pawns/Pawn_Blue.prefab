@@ -320,7 +320,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 0.4
   Loop: 0
   Mute: 0
@@ -490,9 +490,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 1.5
-  maxHP: 30
+  maxHP: 45
   currentHp: 30
-  dame: 5
+  dame: 3
   layerMask:
     serializedVersion: 2
     m_Bits: 128
