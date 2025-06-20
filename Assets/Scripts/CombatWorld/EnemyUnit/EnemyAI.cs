@@ -61,7 +61,7 @@ public class EnemyAI : MonoBehaviour, IEnemy
     public virtual void AttackEvent()
     {
         if (target == null) return;
-        target.GetComponent<KnightAI>().TakeDame(dame);
+        target.GetComponent<IPlayerUnit>().TakeDame(dame);
     }
     private void OnDrawGizmosSelected()
     {

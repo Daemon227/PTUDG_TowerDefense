@@ -33,6 +33,7 @@ public class EnemyMove : MonoBehaviour
                 }
                 else
                 {
+                    CombatManager.Instance.IsWin = false;
                     CombatManager.Instance.IsGameOver = true;
                     Destroy(this.gameObject);
                     return;

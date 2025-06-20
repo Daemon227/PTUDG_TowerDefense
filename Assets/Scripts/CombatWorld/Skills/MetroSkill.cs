@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MetroSkill : MonoBehaviour, ISkill
 {
+    public int id = 1;
     public Transform startPoint;
     public GameObject endPoint;
     public GameObject metroPrefabs;
@@ -17,6 +18,8 @@ public class MetroSkill : MonoBehaviour, ISkill
     public int Cost => cost;
     public Sprite SkillSprite => skillSprite;
     public string Description => description;
+
+    public int GetID => id;
 
     private void Start()
     {
@@ -40,6 +43,7 @@ public class MetroSkill : MonoBehaviour, ISkill
 
 public interface ISkill
 {
+    public int GetID { get; }
     public Sprite SkillSprite { get; }
     public float CountDown { get; }
     public int Cost { get; }

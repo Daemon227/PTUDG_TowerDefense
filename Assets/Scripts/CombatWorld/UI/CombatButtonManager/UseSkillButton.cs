@@ -6,6 +6,8 @@ public class UseSkillButton : MonoBehaviour
     public Image loadingImg;
     public Image skillImg;
     public GameObject skillPrefab;
+    public GameObject notificationPanel;
+    public bool CanChangeSkill = true;
 
     private Button button;
     private bool isCanUseSkill = true;
@@ -16,9 +18,9 @@ public class UseSkillButton : MonoBehaviour
 
     void Start()
     {
-        button = GetComponent<Button>();
-        skillPrefab = ResourceManager.Instance.currentSkill;
+        FirstSettup();
         if (skillPrefab == null) return;
+        button = GetComponent<Button>();
         button.onClick.AddListener(StartSelectSkill);
         countdown = skillPrefab.GetComponent<ISkill>().CountDown;
         skillImg.sprite = skillPrefab.GetComponent<ISkill>().SkillSprite;
@@ -33,15 +35,34 @@ public class UseSkillButton : MonoBehaviour
         {
             CastSkillAtMousePosition();
         }
-
+        if (isWaitingForClick && Input.GetMouseButtonDown(1))
+        {
+            CloseSkill();
+        }
         HandleCooldown();
     }
 
+    public void FirstSettup()
+    {
+        if (!CanChangeSkill) return;
+        if (ResourceManager.Instance == null)
+        {
+            Debug.Log("ResourceManager.Instance is null!");
+            return;
+        }
+        GameObject newSkill = ResourceManager.Instance.currentSkill;
+        if (newSkill == null) return;
+        else
+        {
+            skillPrefab = newSkill;
+        }
+    }
     public void StartSelectSkill()
     {
         if (!isCanUseSkill) return;
 
         isWaitingForClick = true;
+        notificationPanel.SetActive(true);
         Debug.Log("Chờ chọn vị trí để dùng skill...");
     }
 
@@ -58,6 +79,7 @@ public class UseSkillButton : MonoBehaviour
 
         loadingImg.fillAmount = 1;
         loadingImg.gameObject.SetActive(true);
+        notificationPanel.SetActive(false);
     }
 
     private void HandleCooldown()
@@ -73,5 +95,14 @@ public class UseSkillButton : MonoBehaviour
             loadingImg.fillAmount = 0;
             loadingImg.gameObject.SetActive(false);
         }
+    }
+
+    public void CloseSkill()
+    {
+        if (isWaitingForClick)
+        {
+            isWaitingForClick = false;
+            notificationPanel.SetActive(false);
+        }      
     }
 }

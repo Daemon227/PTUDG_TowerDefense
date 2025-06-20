@@ -17,7 +17,12 @@ public class VictoryPanel : MonoBehaviour
         for (int i = 1; i <= rubyCanRecive; i++)
         {
             rubyText.text = "+" + i;
-            yield return new WaitForSeconds(delayTime);
+            yield return new WaitForSeconds(delayTime); 
+        }
+        if (ResourceManager.Instance != null)
+        {
+            ResourceManager.Instance.ruby += rubyCanRecive;
+            ResourceManager.Instance.SaveGame();
         }
         Time.timeScale = 0;
     }

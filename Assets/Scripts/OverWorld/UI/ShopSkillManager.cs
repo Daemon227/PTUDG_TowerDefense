@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class ShopSkillManager : MonoBehaviour
@@ -21,7 +22,7 @@ public class ShopSkillManager : MonoBehaviour
 
     public void CheckBought(ItemShopData item)
     {
-        if (ResourceManager.Instance.skillLists.Contains(item.skillObject))
+        if (ResourceManager.Instance.boughtSkillList.Contains(item.skillObject))
         {
             item.lockPanel.SetActive(false);
             item.costText.text = "Đã mua";
@@ -40,7 +41,7 @@ public class ItemShopData
 {
     public GameObject skillObject;
     public Button button;
-    public Text costText;
+    public TextMeshProUGUI costText;
     public GameObject lockPanel;
 
     public void SetText()
@@ -69,10 +70,10 @@ public class ItemShopData
 
         int cost = skill.Cost;
 
-        if (ResourceManager.Instance.ruby >= cost && !ResourceManager.Instance.skillLists.Contains(skillObject))
+        if (ResourceManager.Instance.ruby >= cost && !ResourceManager.Instance.boughtSkillList.Contains(skillObject))
         {
             ResourceManager.Instance.ruby -= cost;
-            ResourceManager.Instance.skillLists.Add(skillObject);
+            ResourceManager.Instance.boughtSkillList.Add(skillObject);
             lockPanel.SetActive(false);
             costText.text = "Đã mua";
         }

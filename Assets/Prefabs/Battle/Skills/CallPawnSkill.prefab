@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4793730682232759824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3358500827375889883}
+  - component: {fileID: 3273947333418576155}
+  m_Layer: 0
+  m_Name: CallPawnSkill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3358500827375889883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4793730682232759824}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1622.6195, y: 88.20077, z: -0.065071635}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3273947333418576155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4793730682232759824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba746513f7a466244af27a2d14faf245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  pawnPrefabs:
+  - {fileID: 3621885972563025068, guid: 76ead0782c17f044f8b04fd271e19f7a, type: 3}
+  - {fileID: 6093557011057264034, guid: 5e93b361660f48b42b9952cb98c7967d, type: 3}
+  - {fileID: 9176032523612257768, guid: 7d6a8c9d5669fe941833d0b9ecf8642c, type: 3}
+  numberpawn: 3
+  countdown: 10
+  cost: 20
+  skillSprite: {fileID: 21300000, guid: b5ef41f349720364ab6b7a6f52b26381, type: 3}
+  description: "G\u1ECDi ra 3 d\xE2n th\u01B0\u1EDDng \u1EDF v\u1ECB tr\xED b\u1EA5t
+    k\u1EF3"

@@ -78,6 +78,7 @@ public class CombatManager : MonoBehaviour
         if (hp <= 0)
         {
             Debug.Log("GameOver");
+            IsWin = false;
             IsGameOver = true;
         }
     }
@@ -107,8 +108,8 @@ public class CombatManager : MonoBehaviour
         else
         {
             loosePanel.SetActive(true);
+            Time.timeScale = 0;
         }
-        //Time.timeScale = 0;
     }
     
     public void ActiveTakeDamePanel()
