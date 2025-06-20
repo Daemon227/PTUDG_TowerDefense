@@ -5,6 +5,7 @@ public class ArcherAI : MonoBehaviour
     public GameObject bulletPrefabs;
     public Transform attackPoint;
     [HideInInspector] public GameObject target;
+    [HideInInspector] public int dame;
 
     private AudioSource audioSource;
     public AudioClip audioClip;
@@ -12,6 +13,7 @@ public class ArcherAI : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null) audioSource = gameObject.AddComponent<AudioSource>();
+        dame = GetComponentInParent<ITower>().Dame;
     }
     private void Update()
     {
@@ -35,6 +37,7 @@ public class ArcherAI : MonoBehaviour
         audioSource.Play();
         GameObject newBullet = Instantiate(bulletPrefabs, attackPoint.position, Quaternion.identity);
         newBullet.GetComponent<IBullet>().SetTarget(target);
+        newBullet.GetComponent<IBullet>().SetDame(dame);
         gameObject.GetComponent<Animator>().Play("Idle");
     }
 

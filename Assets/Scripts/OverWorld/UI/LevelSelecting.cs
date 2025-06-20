@@ -11,8 +11,7 @@ public class LevelSelecting : MonoBehaviour
     public GameObject lockIcon;
 
     private void Start()
-    {
-        
+    {      
         gameObject.GetComponent<Button>().onClick.AddListener(LoadNextScene);
         bool isUnlocked = IsLevelUnlocked();
         gameObject.GetComponent<Button>().interactable = isUnlocked;

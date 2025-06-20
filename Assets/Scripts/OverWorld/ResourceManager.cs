@@ -5,15 +5,20 @@ using UnityEngine;
 
 public class ResourceManager : MonoBehaviour
 {
+    [Header("Luu Skill da mua")]
     public int ruby;
     public List<GameObject> boughtSkillList = new List<GameObject>();
     public GameObject currentSkill;
-
     public List<GameObject> allSkillList = new List<GameObject>();
+
+    [Header("Luu so map da mo")]
+    public int oppendMapNumber = 0;
+    public int currentMap = 0;
+
     public static ResourceManager Instance;
+
     private void Awake()
-    {
-        
+    {  
         DontDestroyOnLoad(gameObject);
 
         if (PlayerPrefs.HasKey("PlayerRuby"))
@@ -26,7 +31,6 @@ public class ResourceManager : MonoBehaviour
             return;
         }
         Instance = this;
-
        LoadGame();
     }
 
@@ -42,9 +46,9 @@ public class ResourceManager : MonoBehaviour
         {
             ruby = this.ruby,
             boughtSkillInID = new List<int>(),
-            currentSkillInID = boughtSkillList.IndexOf(currentSkill)
+            currentSkillInID = boughtSkillList.IndexOf(currentSkill),
+            numberMap = oppendMapNumber
         };
-
 
         for (int i = 0; i < boughtSkillList.Count; i++)
         {
@@ -94,6 +98,8 @@ public class ResourceManager : MonoBehaviour
                         return;
                     }
                 }
+                // set so map da mo
+                oppendMapNumber = data.numberMap;
             }
         }
         catch (System.Exception ex)
@@ -109,4 +115,5 @@ public class SaveData
     public int ruby;
     public List<int> boughtSkillInID;
     public int currentSkillInID;
+    public int numberMap;
 }

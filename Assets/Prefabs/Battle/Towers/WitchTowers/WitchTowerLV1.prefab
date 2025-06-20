@@ -128,6 +128,7 @@ MonoBehaviour:
   bulletPrefabs: {fileID: 9037211958122848477, guid: 782a512da7cb7af4d9560dce40f8f97d, type: 3}
   attackPoint: {fileID: 7408824095394620480}
   target: {fileID: 0}
+  dame: 0
   audioClip: {fileID: 8300000, guid: d2021c535ac03dc49ac99e493678e5af, type: 3}
 --- !u!82 &6871506605773836017
 AudioSource:
