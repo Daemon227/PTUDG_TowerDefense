@@ -4,6 +4,7 @@ using UnityEngine.UI;
 public class UseSkillButton : MonoBehaviour
 {
     public Image loadingImg;
+    public Image skillImg;
     public GameObject skillPrefab;
 
     private Button button;
@@ -16,9 +17,11 @@ public class UseSkillButton : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
+        skillPrefab = ResourceManager.Instance.currentSkill;
+        if (skillPrefab == null) return;
         button.onClick.AddListener(StartSelectSkill);
-
         countdown = skillPrefab.GetComponent<ISkill>().CountDown;
+        skillImg.sprite = skillPrefab.GetComponent<ISkill>().SkillSprite;
         currentTime = 0;
         loadingImg.fillAmount = 0;
         loadingImg.gameObject.SetActive(false);

@@ -24,9 +24,20 @@ public class EnemyMove : MonoBehaviour
             currentWaypointIndex++;
             if (currentWaypointIndex >= wayPoints.Count)
             {
-                CombatManager.Instance.TakeDame();
-                Destroy(this.gameObject);
-                return;
+                IBoss boss = gameObject.GetComponent<IBoss>();
+                if(boss == null)
+                {
+                    CombatManager.Instance.TakeDame();
+                    Destroy(this.gameObject);
+                    return;
+                }
+                else
+                {
+                    CombatManager.Instance.IsGameOver = true;
+                    Destroy(this.gameObject);
+                    return;
+                }
+                
             }
             SetRandomTargetPos(wayPoints);
         }

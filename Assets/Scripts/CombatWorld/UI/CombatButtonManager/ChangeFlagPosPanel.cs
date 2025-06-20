@@ -4,33 +4,33 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ChangeFlagPosPanel : MonoBehaviour
+public class ChangeFlagPosPanel : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
-    private Button button;
-    private ChangeFlagPos changeFlagPos;
-
-    private void Awake()
-    {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(OnChangeFlagPosClick);
-    }
-
-    private void Start()
-    {
-        changeFlagPos = GetComponentInParent<ChangeFlagPos>();
-        if (changeFlagPos == null)
-        {
-            Debug.Log("Chang flag pos is null");
-            return;
-        }
-    }
-
+    public GameObject panel;
     public void OnChangeFlagPosClick()
     {
+        
+        GameObject currentObject = BuyTowerUIManager.Instance.GetCurrentObject();
+        if (currentObject == null) return;
+        ChangeFlagPos changeFlagPos = currentObject.GetComponent<ChangeFlagPos>();
+        if (changeFlagPos == null) return;
         Debug.Log("Chọn di chuyển cờ");
+        changeFlagPos.canChange = true;   
         CombatPanelManager.Instance.CloseAllUI();
-        changeFlagPos.canChange = true;
+    }
 
-        this.gameObject.SetActive(false);
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        OnChangeFlagPosClick();
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        panel.SetActive(true);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        panel.SetActive(false);
     }
 }

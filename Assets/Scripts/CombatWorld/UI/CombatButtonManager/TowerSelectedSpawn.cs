@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 
-public class TowerSelectedSpawn : MonoBehaviour, IPointerClickHandler
+public class TowerSelectedSpawn : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public GameObject towerPrefab;
     public TextMeshProUGUI coinText;
@@ -24,6 +24,16 @@ public class TowerSelectedSpawn : MonoBehaviour, IPointerClickHandler
         {
             Debug.Log("not enought money");
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        TowerInforPanel.Instance.SetText(towerPrefab);
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        TowerInforPanel.Instance.ClosePanel();
     }
 }
 

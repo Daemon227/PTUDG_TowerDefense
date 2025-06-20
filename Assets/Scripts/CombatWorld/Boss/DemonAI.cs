@@ -2,7 +2,7 @@ using System.Buffers;
 using System.Linq;
 using UnityEngine;
 
-public class DemonAI : EnemyAI
+public class DemonAI : EnemyAI, IBoss
 {
     public GameObject attackEffect;
     public Transform attackPoint;
@@ -115,6 +115,7 @@ public class DemonAI : EnemyAI
     }
     public void DeadEvent()
     {
+        CombatManager.Instance.IsWin = true;
         CombatManager.Instance.IsGameOver = true;
         Destroy(gameObject);
     }

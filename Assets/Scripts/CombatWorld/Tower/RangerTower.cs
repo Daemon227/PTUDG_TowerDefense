@@ -3,24 +3,31 @@
 public class RangerTower : MonoBehaviour, ITower
 {
     public int cost = 50;
+    public int dame = 5;
     public LayerMask enemyLayerMask;
     public float radius = 3;
     public GameObject acher;
     public GameObject newTower;
-    public GameObject changPosPanel;
+    public bool canChangePos = false;
     public AudioClip audioClip;
+    public string description = "Sát thương thấp nhưng tốc độ bắn nhanh";
+
     // kiem soat delay khi ban dan
     private GameObject target;
     private float delayTime = 1f;
     private float currentTime = 2;
     private bool isFirstTimeShoot = true;
-  
+
+    #region PUBLIC SOME PRIVATE INFOR
     public int Cost => cost;
     public float Radius => radius;
     public GameObject NewTower => newTower;
-    public GameObject ChangePosPanel => changPosPanel;
-
+    public bool CanChangePos => canChangePos;
     public AudioClip VoiceAudioClip => audioClip;
+    public int Dame => dame;
+    public string GetDescription => description;
+
+    #endregion
 
     private void Update()
     {

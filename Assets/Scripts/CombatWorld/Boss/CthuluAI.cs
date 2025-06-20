@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class CthuluAI : EnemyAI
+public class CthuluAI : EnemyAI, IBoss
 { 
     public GameObject skillEffect;
     private EnemyMove enemyMove;
@@ -107,6 +107,7 @@ public class CthuluAI : EnemyAI
     }
     public void DeadEvent()
     {
+        CombatManager.Instance.IsWin = true;
         CombatManager.Instance.IsGameOver = true;
         Destroy(gameObject);
     }
