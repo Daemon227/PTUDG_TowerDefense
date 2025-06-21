@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Torch Red
   enemySprite: {fileID: -4230181108591323607, guid: dfd54277de537ea41a9930289d99574e, type: 3}
-  health: 120
-  speed: 0
-  damage: 4
+  health: 128
+  speed: 2
+  damage: 10
   difficulty: 2
+  description: "M\u1ECDi ch\u1EC9 s\u1ED1 \u1EDF m\u1EE9c \u0111\u1ED9 c\xE2n b\u1EB1ng.
+    T\u1EA5n c\xF4ng t\u1EA7m g\u1EA7n"

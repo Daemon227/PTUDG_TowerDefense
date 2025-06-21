@@ -31,7 +31,7 @@ public class BossManager : MonoBehaviour
         selectedBossImage.sprite = boss.bossSprite;
         nameText.text = boss.bossName;
         healthText.text = "HP: " + boss.health;
-        speedText.text = "Tốc độ bắn: " + boss.speed;
+        speedText.text = "Tốc độ: " + boss.speed;
         damageText.text = "Sát thương: " + boss.damage;
         difficultText.text = "Độ khó: " + boss.difficulty;
         descriptionText.text = boss.description;
