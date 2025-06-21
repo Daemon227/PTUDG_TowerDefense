@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bossName: Minatour
   bossSprite: {fileID: 21300000, guid: 895efdcee1f3c4b4381ea1fe35193c21, type: 3}
-  health: 0
-  speed: 
-  damage: 0
-  difficulty: 0
-  description: 
+  health: 1800
+  speed: "Trung b\xECnh"
+  damage: 25
+  difficulty: 1
+  description: "\u201CC\u01A1n cu\u1ED3ng n\u1ED9 b\xF2 m\u1ED9ng\u201D Khi m\xE1u
+    t\u1EE5t xu\u1ED1ng d\u01B0\u1EDBi 60%, h\u1EAFn h\u1ED3i ph\u1EE5c nhanh ch\xF3ng,
+    \u0111\u1ED3ng th\u1EDDi b\xF9ng n\u1ED5 s\u1EE9c m\u1EA1nh v\xE0 t\u1ED1c \u0111\u1ED9
+    \u2013 bi\u1EBFn th\xE0nh c\u01A1n \xE1c m\u1ED9ng di chuy\u1EC3n tr\xEAn chi\u1EBFn
+    tr\u01B0\u1EDDng."

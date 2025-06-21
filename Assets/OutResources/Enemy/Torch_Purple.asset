@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Torch Purple
   enemySprite: {fileID: 8777388641641696378, guid: 401b35c4601a43241b617ee8f88ad5b9, type: 3}
-  health: 100
-  speed: 0
-  damage: 3
-  difficulty: 2
+  health: 64
+  speed: 2
+  damage: 7
+  difficulty: 1
+  description: "M\u1ECDi ch\u1EC9 s\u1ED1 \u1EDF m\u1EE9c \u0111\u1ED9 c\xE2n b\u1EB1ng.
+    T\u1EA5n c\xF4ng t\u1EA7m g\u1EA7n."

@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: TNT Purple
   enemySprite: {fileID: 2272326806082863785, guid: 98aab256b50ad064291a1577805f6937, type: 3}
-  health: 80
-  speed: 0
-  damage: 4
+  health: 45
+  speed: 3
+  damage: 11
   difficulty: 1
+  description: "M\xE1u th\u1EA5p, t\u1ED1c \u0111\u1ED9 nhanh, s\xE1t th\u01B0\u01A1ng
+    cao, t\u1EA5n c\xF4ng t\u1EA7m xa"

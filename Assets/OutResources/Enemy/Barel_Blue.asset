@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Barel Blue
   enemySprite: {fileID: -2718406118890799503, guid: 633cec0f2ff7d5d4d9aac0e671a12f23, type: 3}
-  health: 120
-  speed: 0
-  damage: 1
+  health: 60
+  speed: 1
+  damage: 25
   difficulty: 0
+  description: "M\xE1u cao, t\u1ED1c \u0111\u1ED9 di chuy\u1EC3n ch\u1EADm. Ph\xE1t
+    n\u1ED5 g\xE2y s\xE1t th\u01B0\u01A1ng l\u1EDBn khi ch\u1EBFt."
