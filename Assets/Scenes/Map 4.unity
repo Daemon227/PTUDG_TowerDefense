@@ -45344,7 +45344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 20
-  coin: 500
+  coin: 900
   takeDamePanel: {fileID: 9199147034813954959}
   IsGameOver: 0
   IsWin: 0
@@ -47673,8 +47673,8 @@ MonoBehaviour:
     - {fileID: 6265209582543358654, guid: 049d8119ac26c014cb45daa2a1fef7c4, type: 3}
     - {fileID: 3423697349136010299, guid: fcd43da9ded407541af623865e607e14, type: 3}
     limitEnemyNumber: 35
-  delayTimeBetween2Turn: 20
-  firtTimeDelay: 20
+  delayTimeBetween2Turn: 22
+  firtTimeDelay: 30
   isCanSpawn: 0
   isNextTurn: 0
   turnText: {fileID: 445570589436650390}
