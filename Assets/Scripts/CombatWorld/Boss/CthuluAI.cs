@@ -10,6 +10,7 @@ public class CthuluAI : EnemyAI, IBoss
     private Animator animator;
 
     private float currentSpeed;
+    private bool isDead = false;
 
     // delay skill
     public float countdown = 15f;
@@ -42,10 +43,12 @@ public class CthuluAI : EnemyAI, IBoss
         }
         else
         {
+            if (isDead) return;
             if (currentHp <= 0)
             {
                 enemyMove.FollowThePath(wayPoints, speed);
                 animator.SetTrigger("IsDead");
+                isDead = true;
             }
             else
             {

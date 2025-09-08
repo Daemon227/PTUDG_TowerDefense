@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class EHpBar : MonoBehaviour
@@ -7,6 +7,17 @@ public class EHpBar : MonoBehaviour
     private float currentHp;
     public Image hpbar;
 
+    private Quaternion initialRotation;
+
+    void Start()
+    {
+        initialRotation = transform.rotation; // lưu rotation ban đầu
+    }
+
+    void LateUpdate()
+    {
+        transform.rotation = initialRotation; // giữ nguyên rotation
+    }
     public void SetHpInfor(float hp)
     {
         maxHp = hp;

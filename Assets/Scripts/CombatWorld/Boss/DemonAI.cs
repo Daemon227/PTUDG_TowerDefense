@@ -13,6 +13,7 @@ public class DemonAI : EnemyAI, IBoss
     private Animator animator;
 
     private float currentSpeed;
+    private bool isDead = false;
 
     // delay skill
     public float countdown = 30f;
@@ -45,10 +46,12 @@ public class DemonAI : EnemyAI, IBoss
         }
         else
         {
+            if(isDead) return;
             if (currentHp <= 0)
             {
                 enemyMove.FollowThePath(wayPoints, speed);
                 animator.SetTrigger("IsDead");
+                isDead = true;
             }
             else
             {
